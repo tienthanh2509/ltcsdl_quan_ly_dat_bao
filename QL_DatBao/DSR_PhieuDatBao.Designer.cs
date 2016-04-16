@@ -20,9 +20,9 @@ namespace QL_DatBao {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("PhieuDatBao")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DSR_PhieuDatBao")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class PhieuDatBao : global::System.Data.DataSet {
+    public partial class DSR_PhieuDatBao : global::System.Data.DataSet {
         
         private KHACHHANGDataTable tableKHACHHANG;
         
@@ -42,7 +42,7 @@ namespace QL_DatBao {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public PhieuDatBao() {
+        public DSR_PhieuDatBao() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -53,7 +53,7 @@ namespace QL_DatBao {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected PhieuDatBao(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DSR_PhieuDatBao(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -178,7 +178,7 @@ namespace QL_DatBao {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            PhieuDatBao cln = ((PhieuDatBao)(base.Clone()));
+            DSR_PhieuDatBao cln = ((DSR_PhieuDatBao)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -280,9 +280,9 @@ namespace QL_DatBao {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "PhieuDatBao";
+            this.DataSetName = "DSR_PhieuDatBao";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/PhieuDatBao.xsd";
+            this.Namespace = "http://tempuri.org/DSR_PhieuDatBao.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableKHACHHANG = new KHACHHANGDataTable();
@@ -342,7 +342,7 @@ namespace QL_DatBao {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            PhieuDatBao ds = new PhieuDatBao();
+            DSR_PhieuDatBao ds = new DSR_PhieuDatBao();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -645,7 +645,7 @@ namespace QL_DatBao {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PhieuDatBao ds = new PhieuDatBao();
+                DSR_PhieuDatBao ds = new DSR_PhieuDatBao();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -967,7 +967,7 @@ namespace QL_DatBao {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PhieuDatBao ds = new PhieuDatBao();
+                DSR_PhieuDatBao ds = new DSR_PhieuDatBao();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1274,7 +1274,7 @@ namespace QL_DatBao {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PhieuDatBao ds = new PhieuDatBao();
+                DSR_PhieuDatBao ds = new DSR_PhieuDatBao();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1601,7 +1601,7 @@ namespace QL_DatBao {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PhieuDatBao ds = new PhieuDatBao();
+                DSR_PhieuDatBao ds = new DSR_PhieuDatBao();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2172,7 +2172,7 @@ namespace QL_DatBao {
         }
     }
 }
-namespace QL_DatBao.PhieuDatBaoTableAdapters {
+namespace QL_DatBao.DSR_PhieuDatBaoTableAdapters {
     
     
     /// <summary>
@@ -2342,7 +2342,7 @@ SELECT MAKH, TENKH, DIACHI, DIENTHOAI FROM KHACHHANG WHERE (MAKH = @MAKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESKTOP-SD3DHQR;Initial Catalog=QLDATBAO;Integrated Security=True";
+            this._connection.ConnectionString = global::QL_DatBao.Properties.Settings.Default.QLDATBAOConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2351,7 +2351,7 @@ SELECT MAKH, TENKH, DIACHI, DIENTHOAI FROM KHACHHANG WHERE (MAKH = @MAKH)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        MAKH, TENKH, DIACHI, DIENTHOAI\r\nFROM            KHACHHANG";
+            this._commandCollection[0].CommandText = "SELECT        KHACHHANG.*\r\nFROM            KHACHHANG";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2359,7 +2359,7 @@ SELECT MAKH, TENKH, DIACHI, DIENTHOAI FROM KHACHHANG WHERE (MAKH = @MAKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PhieuDatBao.KHACHHANGDataTable dataTable) {
+        public virtual int Fill(DSR_PhieuDatBao.KHACHHANGDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2372,9 +2372,9 @@ SELECT MAKH, TENKH, DIACHI, DIENTHOAI FROM KHACHHANG WHERE (MAKH = @MAKH)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PhieuDatBao.KHACHHANGDataTable GetData() {
+        public virtual DSR_PhieuDatBao.KHACHHANGDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PhieuDatBao.KHACHHANGDataTable dataTable = new PhieuDatBao.KHACHHANGDataTable();
+            DSR_PhieuDatBao.KHACHHANGDataTable dataTable = new DSR_PhieuDatBao.KHACHHANGDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2382,14 +2382,14 @@ SELECT MAKH, TENKH, DIACHI, DIENTHOAI FROM KHACHHANG WHERE (MAKH = @MAKH)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PhieuDatBao.KHACHHANGDataTable dataTable) {
+        public virtual int Update(DSR_PhieuDatBao.KHACHHANGDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PhieuDatBao dataSet) {
+        public virtual int Update(DSR_PhieuDatBao dataSet) {
             return this.Adapter.Update(dataSet, "KHACHHANG");
         }
         
@@ -2752,7 +2752,7 @@ SELECT MATC, TENTC, LOAITC, NGAYPH, NHAXB FROM TAPCHI WHERE (MATC = @MATC)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESKTOP-SD3DHQR;Initial Catalog=QLDATBAO;Integrated Security=True";
+            this._connection.ConnectionString = global::QL_DatBao.Properties.Settings.Default.QLDATBAOConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2761,7 +2761,7 @@ SELECT MATC, TENTC, LOAITC, NGAYPH, NHAXB FROM TAPCHI WHERE (MATC = @MATC)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        MATC, TENTC, LOAITC, NGAYPH, NHAXB\r\nFROM            TAPCHI";
+            this._commandCollection[0].CommandText = "SELECT        TAPCHI.*\r\nFROM            TAPCHI";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2769,7 +2769,7 @@ SELECT MATC, TENTC, LOAITC, NGAYPH, NHAXB FROM TAPCHI WHERE (MATC = @MATC)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PhieuDatBao.TAPCHIDataTable dataTable) {
+        public virtual int Fill(DSR_PhieuDatBao.TAPCHIDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2782,9 +2782,9 @@ SELECT MATC, TENTC, LOAITC, NGAYPH, NHAXB FROM TAPCHI WHERE (MATC = @MATC)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PhieuDatBao.TAPCHIDataTable GetData() {
+        public virtual DSR_PhieuDatBao.TAPCHIDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PhieuDatBao.TAPCHIDataTable dataTable = new PhieuDatBao.TAPCHIDataTable();
+            DSR_PhieuDatBao.TAPCHIDataTable dataTable = new DSR_PhieuDatBao.TAPCHIDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2792,14 +2792,14 @@ SELECT MATC, TENTC, LOAITC, NGAYPH, NHAXB FROM TAPCHI WHERE (MATC = @MATC)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PhieuDatBao.TAPCHIDataTable dataTable) {
+        public virtual int Update(DSR_PhieuDatBao.TAPCHIDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PhieuDatBao dataSet) {
+        public virtual int Update(DSR_PhieuDatBao dataSet) {
             return this.Adapter.Update(dataSet, "TAPCHI");
         }
         
@@ -3181,7 +3181,7 @@ SELECT SOPHIEU, MAKH, NGAYDAT, TONGSOTIEN FROM PHIEUDATBAO WHERE (SOPHIEU = @SOP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESKTOP-SD3DHQR;Initial Catalog=QLDATBAO;Integrated Security=True";
+            this._connection.ConnectionString = global::QL_DatBao.Properties.Settings.Default.QLDATBAOConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3190,7 +3190,7 @@ SELECT SOPHIEU, MAKH, NGAYDAT, TONGSOTIEN FROM PHIEUDATBAO WHERE (SOPHIEU = @SOP
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        SOPHIEU, MAKH, NGAYDAT, TONGSOTIEN\r\nFROM            PHIEUDATBAO";
+            this._commandCollection[0].CommandText = "SELECT        PHIEUDATBAO.*\r\nFROM            PHIEUDATBAO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3198,7 +3198,7 @@ SELECT SOPHIEU, MAKH, NGAYDAT, TONGSOTIEN FROM PHIEUDATBAO WHERE (SOPHIEU = @SOP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PhieuDatBao.PHIEUDATBAODataTable dataTable) {
+        public virtual int Fill(DSR_PhieuDatBao.PHIEUDATBAODataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3211,9 +3211,9 @@ SELECT SOPHIEU, MAKH, NGAYDAT, TONGSOTIEN FROM PHIEUDATBAO WHERE (SOPHIEU = @SOP
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PhieuDatBao.PHIEUDATBAODataTable GetData() {
+        public virtual DSR_PhieuDatBao.PHIEUDATBAODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PhieuDatBao.PHIEUDATBAODataTable dataTable = new PhieuDatBao.PHIEUDATBAODataTable();
+            DSR_PhieuDatBao.PHIEUDATBAODataTable dataTable = new DSR_PhieuDatBao.PHIEUDATBAODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3221,14 +3221,14 @@ SELECT SOPHIEU, MAKH, NGAYDAT, TONGSOTIEN FROM PHIEUDATBAO WHERE (SOPHIEU = @SOP
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PhieuDatBao.PHIEUDATBAODataTable dataTable) {
+        public virtual int Update(DSR_PhieuDatBao.PHIEUDATBAODataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PhieuDatBao dataSet) {
+        public virtual int Update(DSR_PhieuDatBao dataSet) {
             return this.Adapter.Update(dataSet, "PHIEUDATBAO");
         }
         
@@ -3569,7 +3569,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = "Data Source=DESKTOP-SD3DHQR;Initial Catalog=QLDATBAO;Integrated Security=True";
+            this._connection.ConnectionString = global::QL_DatBao.Properties.Settings.Default.QLDATBAOConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3578,7 +3578,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN\r\nFROM            CTDATBAO";
+            this._commandCollection[0].CommandText = "SELECT        CTDATBAO.*\r\nFROM            CTDATBAO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3586,7 +3586,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PhieuDatBao.CTDATBAODataTable dataTable) {
+        public virtual int Fill(DSR_PhieuDatBao.CTDATBAODataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3599,9 +3599,9 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PhieuDatBao.CTDATBAODataTable GetData() {
+        public virtual DSR_PhieuDatBao.CTDATBAODataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PhieuDatBao.CTDATBAODataTable dataTable = new PhieuDatBao.CTDATBAODataTable();
+            DSR_PhieuDatBao.CTDATBAODataTable dataTable = new DSR_PhieuDatBao.CTDATBAODataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3609,14 +3609,14 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PhieuDatBao.CTDATBAODataTable dataTable) {
+        public virtual int Update(DSR_PhieuDatBao.CTDATBAODataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PhieuDatBao dataSet) {
+        public virtual int Update(DSR_PhieuDatBao dataSet) {
             return this.Adapter.Update(dataSet, "CTDATBAO");
         }
         
@@ -3927,7 +3927,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(PhieuDatBao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DSR_PhieuDatBao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._kHACHHANGTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.KHACHHANG.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -3973,7 +3973,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(PhieuDatBao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DSR_PhieuDatBao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._kHACHHANGTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.KHACHHANG.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -4015,7 +4015,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(PhieuDatBao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DSR_PhieuDatBao dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._cTDATBAOTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.CTDATBAO.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -4081,7 +4081,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(PhieuDatBao dataSet) {
+        public virtual int UpdateAll(DSR_PhieuDatBao dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

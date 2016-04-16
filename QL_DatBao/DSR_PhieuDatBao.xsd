@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="PhieuDatBao" targetNamespace="http://tempuri.org/PhieuDatBao.xsd" xmlns:mstns="http://tempuri.org/PhieuDatBao.xsd" xmlns="http://tempuri.org/PhieuDatBao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DSR_PhieuDatBao" targetNamespace="http://tempuri.org/DSR_PhieuDatBao.xsd" xmlns:mstns="http://tempuri.org/DSR_PhieuDatBao.xsd" xmlns="http://tempuri.org/DSR_PhieuDatBao.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection ConnectionStringObject="Data Source=DESKTOP-SD3DHQR;Initial Catalog=QLDATBAO;Integrated Security=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="desktop-sd3dhqr.QLDATBAO.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLDATBAOConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLDATBAOConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QL_DatBao.Properties.Settings.GlobalReference.Default.QLDATBAOConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KHACHHANGTableAdapter" GeneratorDataComponentClassName="KHACHHANGTableAdapter" Name="KHACHHANG" UserDataComponentName="KHACHHANGTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="desktop-sd3dhqr.QLDATBAO.dbo" DbObjectName="QLDATBAO.dbo.KHACHHANG" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDATBAOConnectionString (Settings)" DbObjectName="QLDATBAO.dbo.KHACHHANG" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [KHACHHANG] WHERE (([MAKH] = @Original_MAKH) AND ([TENKH] = @Original_TENKH) AND ([DIACHI] = @Original_DIACHI) AND ((@IsNull_DIENTHOAI = 1 AND [DIENTHOAI] IS NULL) OR ([DIENTHOAI] = @Original_DIENTHOAI)))</CommandText>
@@ -36,7 +36,7 @@ SELECT MAKH, TENKH, DIACHI, DIENTHOAI FROM KHACHHANG WHERE (MAKH = @MAKH)</Comma
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        MAKH, TENKH, DIACHI, DIENTHOAI
+                    <CommandText>SELECT        KHACHHANG.*
 FROM            KHACHHANG</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -70,7 +70,7 @@ SELECT MAKH, TENKH, DIACHI, DIENTHOAI FROM KHACHHANG WHERE (MAKH = @MAKH)</Comma
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TAPCHITableAdapter" GeneratorDataComponentClassName="TAPCHITableAdapter" Name="TAPCHI" UserDataComponentName="TAPCHITableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="desktop-sd3dhqr.QLDATBAO.dbo" DbObjectName="QLDATBAO.dbo.TAPCHI" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDATBAOConnectionString (Settings)" DbObjectName="QLDATBAO.dbo.TAPCHI" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [TAPCHI] WHERE (([MATC] = @Original_MATC) AND ([TENTC] = @Original_TENTC) AND ([LOAITC] = @Original_LOAITC) AND ([NGAYPH] = @Original_NGAYPH) AND ((@IsNull_NHAXB = 1 AND [NHAXB] IS NULL) OR ([NHAXB] = @Original_NHAXB)))</CommandText>
@@ -99,7 +99,7 @@ SELECT MATC, TENTC, LOAITC, NGAYPH, NHAXB FROM TAPCHI WHERE (MATC = @MATC)</Comm
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        MATC, TENTC, LOAITC, NGAYPH, NHAXB
+                    <CommandText>SELECT        TAPCHI.*
 FROM            TAPCHI</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -136,7 +136,7 @@ SELECT MATC, TENTC, LOAITC, NGAYPH, NHAXB FROM TAPCHI WHERE (MATC = @MATC)</Comm
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PHIEUDATBAOTableAdapter" GeneratorDataComponentClassName="PHIEUDATBAOTableAdapter" Name="PHIEUDATBAO" UserDataComponentName="PHIEUDATBAOTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="desktop-sd3dhqr.QLDATBAO.dbo" DbObjectName="QLDATBAO.dbo.PHIEUDATBAO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDATBAOConnectionString (Settings)" DbObjectName="QLDATBAO.dbo.PHIEUDATBAO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [PHIEUDATBAO] WHERE (([SOPHIEU] = @Original_SOPHIEU) AND ([MAKH] = @Original_MAKH) AND ([NGAYDAT] = @Original_NGAYDAT) AND ((@IsNull_TONGSOTIEN = 1 AND [TONGSOTIEN] IS NULL) OR ([TONGSOTIEN] = @Original_TONGSOTIEN)))</CommandText>
@@ -163,7 +163,7 @@ SELECT SOPHIEU, MAKH, NGAYDAT, TONGSOTIEN FROM PHIEUDATBAO WHERE (SOPHIEU = @SOP
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        SOPHIEU, MAKH, NGAYDAT, TONGSOTIEN
+                    <CommandText>SELECT        PHIEUDATBAO.*
 FROM            PHIEUDATBAO</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -197,7 +197,7 @@ SELECT SOPHIEU, MAKH, NGAYDAT, TONGSOTIEN FROM PHIEUDATBAO WHERE (SOPHIEU = @SOP
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CTDATBAOTableAdapter" GeneratorDataComponentClassName="CTDATBAOTableAdapter" Name="CTDATBAO" UserDataComponentName="CTDATBAOTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="desktop-sd3dhqr.QLDATBAO.dbo" DbObjectName="QLDATBAO.dbo.CTDATBAO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLDATBAOConnectionString (Settings)" DbObjectName="QLDATBAO.dbo.CTDATBAO" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [CTDATBAO] WHERE (([MATC] = @Original_MATC) AND ([SOPHIEU] = @Original_SOPHIEU) AND ([THANGBD] = @Original_THANGBD) AND ([THANGKT] = @Original_THANGKT) AND ([SOTIEN] = @Original_SOTIEN))</CommandText>
@@ -225,7 +225,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN
+                    <CommandText>SELECT        CTDATBAO.*
 FROM            CTDATBAO</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -264,7 +264,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="PhieuDatBao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="PhieuDatBao" msprop:Generator_UserDSName="PhieuDatBao">
+  <xs:element name="DSR_PhieuDatBao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSR_PhieuDatBao" msprop:Generator_UserDSName="DSR_PhieuDatBao">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="KHACHHANG" msprop:Generator_TableClassName="KHACHHANGDataTable" msprop:Generator_TableVarName="tableKHACHHANG" msprop:Generator_TablePropName="KHACHHANG" msprop:Generator_RowDeletingName="KHACHHANGRowDeleting" msprop:Generator_RowChangingName="KHACHHANGRowChanging" msprop:Generator_RowEvHandlerName="KHACHHANGRowChangeEventHandler" msprop:Generator_RowDeletedName="KHACHHANGRowDeleted" msprop:Generator_UserTableName="KHACHHANG" msprop:Generator_RowChangedName="KHACHHANGRowChanged" msprop:Generator_RowEvArgName="KHACHHANGRowChangeEvent" msprop:Generator_RowClassName="KHACHHANGRow">

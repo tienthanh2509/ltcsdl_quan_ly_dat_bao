@@ -46,6 +46,8 @@ namespace QL_DatBao
             {
                 cnn.Open();
                 is_login = true;
+                Properties.Settings.Default.connectionString = Class.XL_BANG.connectionString;
+                Properties.Settings.Default.Save();
                 cnn.Close();
                 this.Close();
             }

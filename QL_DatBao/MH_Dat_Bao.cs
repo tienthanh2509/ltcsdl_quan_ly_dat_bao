@@ -131,13 +131,23 @@ namespace QL_DatBao
 
         private void btn_in_Click(object sender, EventArgs e)
         {
+            string MAKH = cb_makh.SelectedValue.ToString();
+            string SOPHIEU = txt_sophieu.Text.Trim();
+            //
             DataSet ds = new DataSet();
-            ds.Tables.Add(Bang_KHACHHANG.Copy());
-            DataTable dt = Bang_CTDATBAO.layDsChiTiet(txt_sophieu.Text, cb_makh.SelectedValue.ToString());
-            dt.TableName = "CHITIET";
-            ds.Tables.Add(dt.Copy());
-            dt.Dispose();
-
+            //DataTable dt1, dt2, dt3, dt4;
+            //// Rút trích dữ liệu bảng KHACHHANG
+            //dt1 = Bang_KHACHHANG.FindByMAKH(MAKH);
+            //dt1.TableName = "KHACHHANG";
+            //ds.Tables.Add(dt1);
+            //dt1.Dispose();
+            //// Rút trích dữ liệu bảng CTDATBAO
+            //dt2 = Bang_CTDATBAO.FindBySOPHIEU_MAKH(SOPHIEU, MAKH);
+            //dt2.TableName = "CTDATBAO";
+            //ds.Tables.Add(dt2.Copy());
+            //dt2.Dispose();
+            //// Lấy dữ liệu bảng TAPCHI
+            //
             MH_In_BC f = new MH_In_BC(ds);
             f.StartPosition = FormStartPosition.CenterScreen;
             f.ShowDialog();
