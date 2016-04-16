@@ -72,11 +72,25 @@
     <Compile Include="Class\XL_BANG.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Class\XL_CTDATBAO.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Class\XL_PHIEUDATBAO.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Class\XL_KHACHHANG.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="MH_Dang_Nhap.cs">
       <SubType>Form</SubType>
@@ -108,8 +122,23 @@
     <Compile Include="MH_Khach_Hang.Designer.cs">
       <DependentUpon>MH_Khach_Hang.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhieuDatBao.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PhieuDatBao.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RP_PhieuDatBao.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RP_PhieuDatBao.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="MH_Dang_Nhap.resx">
       <DependentUpon>MH_Dang_Nhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +164,32 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RP_PhieuDatBao.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RP_PhieuDatBao.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="PhieuDatBao.xsc">
+      <DependentUpon>PhieuDatBao.xsd</DependentUpon>
+    </None>
+    <None Include="PhieuDatBao.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PhieuDatBao.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="PhieuDatBao.xss">
+      <DependentUpon>PhieuDatBao.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

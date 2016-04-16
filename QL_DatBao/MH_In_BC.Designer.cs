@@ -50,6 +50,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "MH_In_BC";
             this.Text = "MH_In_BC";
+            this.Load += new System.EventHandler(this.MH_In_BC_Load);
             this.ResumeLayout(false);
 
         }

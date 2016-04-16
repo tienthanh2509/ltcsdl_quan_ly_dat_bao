@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,12 +58,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dg_chitietdatbao = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn();
-            this.Column5 = new DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MATC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THANGBD = new DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn();
+            this.THANGKT = new DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn();
+            this.SOTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_chitietdatbao)).BeginInit();
             this.SuspendLayout();
@@ -131,6 +131,7 @@
             this.btn_in.TabIndex = 24;
             this.btn_in.Text = "In phiếu";
             this.btn_in.UseVisualStyleBackColor = true;
+            this.btn_in.Click += new System.EventHandler(this.btn_in_Click);
             // 
             // btn_khongghi
             // 
@@ -141,6 +142,7 @@
             this.btn_khongghi.TabIndex = 23;
             this.btn_khongghi.Text = "Không ghi";
             this.btn_khongghi.UseVisualStyleBackColor = true;
+            this.btn_khongghi.Click += new System.EventHandler(this.btn_khongghi_Click);
             // 
             // btn_ghi
             // 
@@ -151,6 +153,7 @@
             this.btn_ghi.TabIndex = 22;
             this.btn_ghi.Text = "Ghi";
             this.btn_ghi.UseVisualStyleBackColor = true;
+            this.btn_ghi.Click += new System.EventHandler(this.btn_ghi_Click);
             // 
             // btn_sua
             // 
@@ -160,6 +163,7 @@
             this.btn_sua.TabIndex = 21;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.UseVisualStyleBackColor = true;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_xoa
             // 
@@ -169,6 +173,7 @@
             this.btn_xoa.TabIndex = 20;
             this.btn_xoa.Text = "Xóa";
             this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // btn_them
             // 
@@ -178,6 +183,7 @@
             this.btn_them.TabIndex = 19;
             this.btn_them.Text = "Thêm";
             this.btn_them.UseVisualStyleBackColor = true;
+            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
             // btn_cuoi
             // 
@@ -234,6 +240,8 @@
             this.txt_tongsotien.Name = "txt_tongsotien";
             this.txt_tongsotien.Size = new System.Drawing.Size(147, 20);
             this.txt_tongsotien.TabIndex = 12;
+            this.txt_tongsotien.Text = "0";
+            this.txt_tongsotien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label8
             // 
@@ -246,6 +254,7 @@
             // 
             // txt_tenkh
             // 
+            this.txt_tenkh.Enabled = false;
             this.txt_tenkh.Location = new System.Drawing.Point(431, 48);
             this.txt_tenkh.Name = "txt_tenkh";
             this.txt_tenkh.Size = new System.Drawing.Size(449, 20);
@@ -253,6 +262,7 @@
             // 
             // txt_diachi
             // 
+            this.txt_diachi.Enabled = false;
             this.txt_diachi.Location = new System.Drawing.Point(431, 74);
             this.txt_diachi.Name = "txt_diachi";
             this.txt_diachi.Size = new System.Drawing.Size(449, 20);
@@ -260,6 +270,7 @@
             // 
             // txt_sdt
             // 
+            this.txt_sdt.Enabled = false;
             this.txt_sdt.Location = new System.Drawing.Point(98, 77);
             this.txt_sdt.Name = "txt_sdt";
             this.txt_sdt.Size = new System.Drawing.Size(181, 20);
@@ -348,86 +359,86 @@
             this.dg_chitietdatbao.BackgroundColor = System.Drawing.Color.SeaGreen;
             this.dg_chitietdatbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_chitietdatbao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6});
+            this.STT,
+            this.MATC,
+            this.TENTC,
+            this.THANGBD,
+            this.THANGKT,
+            this.SOTIEN});
             this.dg_chitietdatbao.Location = new System.Drawing.Point(12, 218);
             this.dg_chitietdatbao.Name = "dg_chitietdatbao";
             this.dg_chitietdatbao.Size = new System.Drawing.Size(926, 232);
             this.dg_chitietdatbao.TabIndex = 3;
             this.dg_chitietdatbao.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dg_chitietdatbao_DataBindingComplete);
             // 
-            // Column1
+            // STT
             // 
-            this.Column1.HeaderText = "STT";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 80;
+            this.STT.HeaderText = "STT";
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            this.STT.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.STT.Width = 80;
             // 
-            // Column2
+            // MATC
             // 
-            this.Column2.DataPropertyName = "MATC";
-            this.Column2.HeaderText = "Mã Tạp Chí";
-            this.Column2.Name = "Column2";
+            this.MATC.DataPropertyName = "MATC";
+            this.MATC.HeaderText = "Mã Tạp Chí";
+            this.MATC.Name = "MATC";
             // 
-            // Column3
+            // TENTC
             // 
-            this.Column3.DataPropertyName = "TENTC";
-            this.Column3.HeaderText = "Tên Tạp Chí";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 300;
+            this.TENTC.DataPropertyName = "TENTC";
+            this.TENTC.HeaderText = "Tên Tạp Chí";
+            this.TENTC.Name = "TENTC";
+            this.TENTC.Width = 300;
             // 
-            // Column4
-            // 
-            // 
-            // 
-            // 
-            this.Column4.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.Column4.BackgroundStyle.Class = "DataGridViewNumericBorder";
-            this.Column4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.Column4.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText;
-            this.Column4.DataPropertyName = "THANGBD";
-            this.Column4.HeaderText = "Tháng Bắt Đầu";
-            this.Column4.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column4.Width = 120;
-            // 
-            // Column5
+            // THANGBD
             // 
             // 
             // 
             // 
-            this.Column5.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.Column5.BackgroundStyle.Class = "DataGridViewNumericBorder";
-            this.Column5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.Column5.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText;
-            this.Column5.DataPropertyName = "THANGKT";
-            this.Column5.HeaderText = "Tháng Kết Thúc";
-            this.Column5.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.Width = 120;
+            this.THANGBD.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.THANGBD.BackgroundStyle.Class = "DataGridViewNumericBorder";
+            this.THANGBD.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.THANGBD.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText;
+            this.THANGBD.DataPropertyName = "THANGBD";
+            this.THANGBD.HeaderText = "Tháng Bắt Đầu";
+            this.THANGBD.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            this.THANGBD.Name = "THANGBD";
+            this.THANGBD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.THANGBD.Width = 120;
             // 
-            // Column6
+            // THANGKT
             // 
-            this.Column6.DataPropertyName = "SOTIEN";
-            dataGridViewCellStyle2.Format = "#,0 \"vnđ\"";
-            dataGridViewCellStyle2.NullValue = "N/a";
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column6.HeaderText = "Số Tiền";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 165;
+            // 
+            // 
+            // 
+            this.THANGKT.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.THANGKT.BackgroundStyle.Class = "DataGridViewNumericBorder";
+            this.THANGKT.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.THANGKT.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText;
+            this.THANGKT.DataPropertyName = "THANGKT";
+            this.THANGKT.HeaderText = "Tháng Kết Thúc";
+            this.THANGKT.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            this.THANGKT.Name = "THANGKT";
+            this.THANGKT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.THANGKT.Width = 120;
+            // 
+            // SOTIEN
+            // 
+            this.SOTIEN.DataPropertyName = "SOTIEN";
+            dataGridViewCellStyle11.Format = "#,0";
+            dataGridViewCellStyle11.NullValue = "N/a";
+            this.SOTIEN.DefaultCellStyle = dataGridViewCellStyle11;
+            this.SOTIEN.HeaderText = "Số Tiền";
+            this.SOTIEN.Name = "SOTIEN";
+            this.SOTIEN.Width = 165;
             // 
             // MH_Dat_Bao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(960, 458);
+            this.ClientSize = new System.Drawing.Size(951, 458);
             this.Controls.Add(this.dg_chitietdatbao);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.groupBox1);
@@ -474,11 +485,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dg_chitietdatbao;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn Column4;
-        private DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MATC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENTC;
+        private DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn THANGBD;
+        private DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn THANGKT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SOTIEN;
     }
 }

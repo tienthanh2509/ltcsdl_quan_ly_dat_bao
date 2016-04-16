@@ -53,5 +53,12 @@ namespace QL_DatBao
         {
 
         }
+
+        private void buttonItem3_Click(object sender, EventArgs e)
+        {
+            MH_Khach_Hang f = new MH_Khach_Hang();
+            f.StartPosition = FormStartPosition.CenterParent;
+            f.ShowDialog(this);
+        }
     }
 }

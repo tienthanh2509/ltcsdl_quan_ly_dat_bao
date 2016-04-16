@@ -28,122 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dg_danhsachkhachhang = new System.Windows.Forms.DataGridView();
+            this.MAKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TENKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIACHI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIENTHOAI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btn_luu = new System.Windows.Forms.Button();
+            this.btn_lamtuoi = new System.Windows.Forms.Button();
+            this.btn_xoa = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_danhsachkhachhang)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dg_danhsachkhachhang
+            // 
+            this.dg_danhsachkhachhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_danhsachkhachhang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MAKH,
+            this.TENKH,
+            this.DIACHI,
+            this.DIENTHOAI});
+            this.dg_danhsachkhachhang.Location = new System.Drawing.Point(16, 87);
+            this.dg_danhsachkhachhang.Name = "dg_danhsachkhachhang";
+            this.dg_danhsachkhachhang.Size = new System.Drawing.Size(658, 324);
+            this.dg_danhsachkhachhang.TabIndex = 12;
+            // 
+            // MAKH
+            // 
+            this.MAKH.DataPropertyName = "MAKH";
+            this.MAKH.HeaderText = "Mã KH";
+            this.MAKH.Name = "MAKH";
+            // 
+            // TENKH
+            // 
+            this.TENKH.DataPropertyName = "TENKH";
+            this.TENKH.HeaderText = "Tên khách hàng";
+            this.TENKH.Name = "TENKH";
+            this.TENKH.Width = 150;
+            // 
+            // DIACHI
+            // 
+            this.DIACHI.DataPropertyName = "DIACHI";
+            this.DIACHI.HeaderText = "Địa chỉ";
+            this.DIACHI.Name = "DIACHI";
+            this.DIACHI.Width = 250;
+            // 
+            // DIENTHOAI
+            // 
+            this.DIENTHOAI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DIENTHOAI.DataPropertyName = "DIENTHOAI";
+            this.DIENTHOAI.HeaderText = "Số điện thoại";
+            this.DIENTHOAI.Name = "DIENTHOAI";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.Location = new System.Drawing.Point(213, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã KH";
+            this.label1.Size = new System.Drawing.Size(253, 29);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Danh sách khách hàng";
             // 
-            // textBox1
+            // btn_luu
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 10);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(211, 20);
-            this.textBox1.TabIndex = 1;
+            this.btn_luu.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.btn_luu.Location = new System.Drawing.Point(518, 58);
+            this.btn_luu.Name = "btn_luu";
+            this.btn_luu.Size = new System.Drawing.Size(75, 23);
+            this.btn_luu.TabIndex = 14;
+            this.btn_luu.Text = "Lưu";
+            this.btn_luu.UseVisualStyleBackColor = true;
+            this.btn_luu.Click += new System.EventHandler(this.btn_luu_Click);
             // 
-            // textBox2
+            // btn_lamtuoi
             // 
-            this.textBox2.Location = new System.Drawing.Point(79, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 20);
-            this.textBox2.TabIndex = 3;
+            this.btn_lamtuoi.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btn_lamtuoi.Location = new System.Drawing.Point(437, 58);
+            this.btn_lamtuoi.Name = "btn_lamtuoi";
+            this.btn_lamtuoi.Size = new System.Drawing.Size(75, 23);
+            this.btn_lamtuoi.TabIndex = 15;
+            this.btn_lamtuoi.Text = "Làm tươi";
+            this.btn_lamtuoi.UseVisualStyleBackColor = true;
+            this.btn_lamtuoi.Click += new System.EventHandler(this.btn_lamtuoi_Click);
             // 
-            // label2
+            // btn_xoa
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tên KH";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(419, 36);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(255, 20);
-            this.textBox4.TabIndex = 11;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(331, 39);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Số điện thoại";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(419, 10);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(255, 20);
-            this.textBox3.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(361, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Địa chỉ";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(16, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(658, 328);
-            this.dataGridView1.TabIndex = 12;
+            this.btn_xoa.ForeColor = System.Drawing.Color.Red;
+            this.btn_xoa.Location = new System.Drawing.Point(599, 58);
+            this.btn_xoa.Name = "btn_xoa";
+            this.btn_xoa.Size = new System.Drawing.Size(75, 23);
+            this.btn_xoa.TabIndex = 16;
+            this.btn_xoa.Text = "Xóa";
+            this.btn_xoa.UseVisualStyleBackColor = true;
+            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
             // MH_Khach_Hang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 402);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(686, 423);
+            this.Controls.Add(this.btn_xoa);
+            this.Controls.Add(this.btn_lamtuoi);
+            this.Controls.Add(this.btn_luu);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.dg_danhsachkhachhang);
             this.Name = "MH_Khach_Hang";
             this.Text = "MH_Khach_Hang";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.MH_Khach_Hang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_danhsachkhachhang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
+        private System.Windows.Forms.DataGridView dg_danhsachkhachhang;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_luu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MAKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TENKH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIACHI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIENTHOAI;
+        private System.Windows.Forms.Button btn_lamtuoi;
+        private System.Windows.Forms.Button btn_xoa;
     }
 }
