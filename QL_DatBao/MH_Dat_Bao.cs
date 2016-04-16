@@ -14,6 +14,7 @@ namespace QL_DatBao
         BindingManagerBase DS_KHACHHANG;
         //
         Class.XL_CTDATBAO Bang_CTDATBAO;
+        Class.XL_TAPCHI Bang_TAPCHI;
 
         public MH_Dat_Bao()
         {
@@ -26,6 +27,7 @@ namespace QL_DatBao
             Bang_PHIEUDATBAO = new Class.XL_PHIEUDATBAO();
             Bang_KHACHHANG = new Class.XL_KHACHHANG();
             Bang_CTDATBAO = new Class.XL_CTDATBAO();
+            Bang_TAPCHI = new Class.XL_TAPCHI();
             //
             Bang_KHACHHANG.Columns["MAKH"].ReadOnly = true;
             cb_makh.DataSource = Bang_KHACHHANG;
@@ -50,8 +52,8 @@ namespace QL_DatBao
             // Default value
             if (Bang_PHIEUDATBAO.Rows[DS_PHIEUDATBAO.Position][1] != null)
                 DS_PHIEUDATBAO_PositionChanged(sender, e);
-            if(cb_makh.SelectedValue != null)
-            DS_KHACHHANG_PositionChanged(sender, e);
+            if (cb_makh.SelectedValue != null)
+                DS_KHACHHANG_PositionChanged(sender, e);
         }
 
         private void DS_KHACHHANG_PositionChanged(object sender, EventArgs e)
@@ -97,8 +99,8 @@ namespace QL_DatBao
             {
                 r.Cells["STT"].Value = r.Index + 1;
 
-                if(r.Cells["SOTIEN"].Value != null)
-                tong += long.Parse(r.Cells["SOTIEN"].Value.ToString(), NumberStyles.Currency);
+                if (r.Cells["SOTIEN"].Value != null)
+                    tong += long.Parse(r.Cells["SOTIEN"].Value.ToString(), NumberStyles.Currency);
             }
 
             txt_tongsotien.Text = tong.ToString("#,0");
@@ -133,20 +135,28 @@ namespace QL_DatBao
         {
             string MAKH = cb_makh.SelectedValue.ToString();
             string SOPHIEU = txt_sophieu.Text.Trim();
-            //
             DataSet ds = new DataSet();
-            //DataTable dt1, dt2, dt3, dt4;
-            //// Rút trích dữ liệu bảng KHACHHANG
-            //dt1 = Bang_KHACHHANG.FindByMAKH(MAKH);
-            //dt1.TableName = "KHACHHANG";
-            //ds.Tables.Add(dt1);
-            //dt1.Dispose();
-            //// Rút trích dữ liệu bảng CTDATBAO
-            //dt2 = Bang_CTDATBAO.FindBySOPHIEU_MAKH(SOPHIEU, MAKH);
-            //dt2.TableName = "CTDATBAO";
-            //ds.Tables.Add(dt2.Copy());
-            //dt2.Dispose();
-            //// Lấy dữ liệu bảng TAPCHI
+            DataTable[] dt = new DataTable[4];
+            // Rút trích dữ liệu bảng PHIEUDATBAO
+            dt[0] = Bang_PHIEUDATBAO.FindBySOPHIEU(SOPHIEU);
+            dt[0].TableName = "PHIEUDATBAO";
+            ds.Tables.Add(dt[0].Copy());
+            dt[0].Dispose();
+            // Rút trích dữ liệu bảng CTDATBAO
+            dt[1] = Bang_CTDATBAO.FindBySOPHIEU(SOPHIEU);
+            dt[1].TableName = "CTDATBAO";
+            ds.Tables.Add(dt[1].Copy());
+            dt[1].Dispose();
+            // Rút trích dữ liệu bảng TAPCHI
+            dt[2] = Bang_TAPCHI.FindBySOPHIEU(SOPHIEU);
+            dt[2].TableName = "TAPCHI";
+            ds.Tables.Add(dt[2].Copy());
+            dt[2].Dispose();
+            // Rút trích dữ liệu bảng KHACHHANG
+            dt[3] = Bang_KHACHHANG.FindByMAKH(MAKH);
+            dt[3].TableName = "KHACHHANG";
+            ds.Tables.Add(dt[3].Copy());
+            dt[3].Dispose();
             //
             MH_In_BC f = new MH_In_BC(ds);
             f.StartPosition = FormStartPosition.CenterScreen;

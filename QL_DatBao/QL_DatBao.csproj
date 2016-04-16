@@ -81,6 +81,9 @@
     <Compile Include="Class\XL_KHACHHANG.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Class\XL_TAPCHI.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DSR_PhieuDatBao.cs">
       <DependentUpon>DSR_PhieuDatBao.xsd</DependentUpon>
     </Compile>

@@ -27,27 +27,16 @@ namespace QL_DatBao.Class
                                   + " WHERE PHIEUDATBAO.SOPHIEU = '" + SOPHIEU + "' AND PHIEUDATBAO.MAKH = '" + MAKH + "'");
         }
 
-        public DataTable dulieureport(string SOPHIEU, string MAKH)
+        public DataTable FindBySOPHIEU(string SOPHIEU)
         {
             return ExecuteQuery("SELECT "
-                                + "  PHIEUDATBAO.SOPHIEU, "
-                                + "  PHIEUDATBAO.NGAYDAT, "
-                                + "  PHIEUDATBAO.TONGSOTIEN, "
+                                + "  CTDATBAO.MATC, "
+                                + "  CTDATBAO.SOPHIEU, "
                                 + "  CTDATBAO.THANGBD, "
                                 + "  CTDATBAO.THANGKT, "
-                                + "  CTDATBAO.SOTIEN, "
-                                + "  TAPCHI.MATC, "
-                                + "  TAPCHI.TENTC, "
-                                + "  KHACHHANG.TENKH, "
-                                + "  KHACHHANG.MAKH "
+                                + "  CTDATBAO.SOTIEN "
                                 + "FROM dbo.CTDATBAO "
-                                + "INNER JOIN dbo.PHIEUDATBAO "
-                                + "  ON CTDATBAO.SOPHIEU = PHIEUDATBAO.SOPHIEU "
-                                + "INNER JOIN dbo.TAPCHI "
-                                + "  ON CTDATBAO.MATC = TAPCHI.MATC "
-                                + "INNER JOIN dbo.KHACHHANG "
-                                + "  ON PHIEUDATBAO.MAKH = KHACHHANG.MAKH "
-                                + " WHERE PHIEUDATBAO.SOPHIEU = '" + SOPHIEU + "' AND PHIEUDATBAO.MAKH = '" + MAKH + "'");
+                                + " WHERE CTDATBAO.SOPHIEU = '" + SOPHIEU + "'");
         }
     }
 }

@@ -9,5 +9,10 @@ namespace QL_DatBao.Class
         public XL_PHIEUDATBAO() : base("PHIEUDATBAO") { }
         public XL_PHIEUDATBAO(string sql) : base("PHIEUDATBAO", sql) { }
         #endregion
+
+        public DataTable FindBySOPHIEU(string SOPHIEU)
+        {
+            return ExecuteQuery("SELECT * FROM PHIEUDATBAO WHERE SOPHIEU = '" + SOPHIEU + "'");
+        }
     }
 }
