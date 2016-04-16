@@ -157,6 +157,8 @@ namespace QL_DatBao
             dt[3].TableName = "KHACHHANG";
             ds.Tables.Add(dt[3].Copy());
             dt[3].Dispose();
+            // Free Memory
+            dt = null;
             //
             MH_In_BC f = new MH_In_BC(ds);
             f.StartPosition = FormStartPosition.CenterScreen;
