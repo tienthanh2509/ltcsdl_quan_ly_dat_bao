@@ -16,5 +16,12 @@ namespace QL_DatBao
         {
             InitializeComponent();
         }
+
+        private void MH_ChiTietDatBao_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dSR_PhieuDatBao.TAPCHI' table. You can move, or remove it, as needed.
+            this.tAPCHITableAdapter.Fill(this.dSR_PhieuDatBao.TAPCHI);
+
+        }
     }
 }

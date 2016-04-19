@@ -170,6 +170,9 @@
       <DependentUpon>RP_PhieuDatBao.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="MH_ChiTietDatBao.resx">
+      <DependentUpon>MH_ChiTietDatBao.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MH_Dang_Nhap.resx">
       <DependentUpon>MH_Dang_Nhap.cs</DependentUpon>
     </EmbeddedResource>
