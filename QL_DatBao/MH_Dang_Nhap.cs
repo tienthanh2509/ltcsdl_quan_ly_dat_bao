@@ -16,7 +16,7 @@ namespace QL_DatBao
         private void frm_Dang_Nhap_Load(object sender, EventArgs e)
         {
             cb_Authentication.SelectedIndex = 0;
-            bt_Dang_Nhap.PerformClick();
+            //bt_Dang_Nhap.PerformClick();
         }
 
         private void cb_Authentication_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,18 +36,19 @@ namespace QL_DatBao
         private void bt_Dang_Nhap_Click(object sender, EventArgs e)
         {
             if (cb_Authentication.SelectedIndex == 0)
-                Class.XL_BANG.connectionString = "Data Source=" + txtServerName.Text +
-                                             ";Initial Catalog=QLDATBAO;Integrated Security=True";
+                Class.XL_BANG.connectionString = "Data Source=" + txtServerName.Text
+                    + ";Initial Catalog=" + txt_database.Text
+                    + ";Integrated Security=True";
             else
-                Class.XL_BANG.connectionString = "Data Source=" + txtServerName.Text + ";Initial Catalog=QLDATBAO;User ID=" +
-                                             txtUserName.Text + ";Password=" + txtPassword.Text;
+                Class.XL_BANG.connectionString = "Data Source=" + txtServerName.Text
+                    + ";Initial Catalog=" + txt_database.Text
+                    + ";User ID=" + txtUserName.Text
+                    + ";Password=" + txtPassword.Text;
             SqlConnection cnn = new SqlConnection(Class.XL_BANG.connectionString);
             try
             {
                 cnn.Open();
                 is_login = true;
-                Properties.Settings.Default.connectionString = Class.XL_BANG.connectionString;
-                Properties.Settings.Default.Save();
                 cnn.Close();
                 this.Close();
             }
@@ -56,5 +57,14 @@ namespace QL_DatBao
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void form_on_keydown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                bt_Dang_Nhap.PerformClick();
+            else if (e.KeyCode == Keys.Escape)
+                bt_Thoat.PerformClick();
+        }
+
     }
 }

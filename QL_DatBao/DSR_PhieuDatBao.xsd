@@ -267,7 +267,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
   <xs:element name="DSR_PhieuDatBao" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSR_PhieuDatBao" msprop:Generator_UserDSName="DSR_PhieuDatBao">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="KHACHHANG" msprop:Generator_TableClassName="KHACHHANGDataTable" msprop:Generator_TableVarName="tableKHACHHANG" msprop:Generator_TablePropName="KHACHHANG" msprop:Generator_RowDeletingName="KHACHHANGRowDeleting" msprop:Generator_RowChangingName="KHACHHANGRowChanging" msprop:Generator_RowEvHandlerName="KHACHHANGRowChangeEventHandler" msprop:Generator_RowDeletedName="KHACHHANGRowDeleted" msprop:Generator_UserTableName="KHACHHANG" msprop:Generator_RowChangedName="KHACHHANGRowChanged" msprop:Generator_RowEvArgName="KHACHHANGRowChangeEvent" msprop:Generator_RowClassName="KHACHHANGRow">
+        <xs:element name="KHACHHANG" msprop:Generator_TableClassName="KHACHHANGDataTable" msprop:Generator_TableVarName="tableKHACHHANG" msprop:Generator_RowChangedName="KHACHHANGRowChanged" msprop:Generator_TablePropName="KHACHHANG" msprop:Generator_RowDeletingName="KHACHHANGRowDeleting" msprop:Generator_RowChangingName="KHACHHANGRowChanging" msprop:Generator_RowEvHandlerName="KHACHHANGRowChangeEventHandler" msprop:Generator_RowDeletedName="KHACHHANGRowDeleted" msprop:Generator_RowClassName="KHACHHANGRow" msprop:Generator_UserTableName="KHACHHANG" msprop:Generator_RowEvArgName="KHACHHANGRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MAKH" msprop:Generator_ColumnVarNameInTable="columnMAKH" msprop:Generator_ColumnPropNameInRow="MAKH" msprop:Generator_ColumnPropNameInTable="MAKHColumn" msprop:Generator_UserColumnName="MAKH">
@@ -301,7 +301,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TAPCHI" msprop:Generator_TableClassName="TAPCHIDataTable" msprop:Generator_TableVarName="tableTAPCHI" msprop:Generator_TablePropName="TAPCHI" msprop:Generator_RowDeletingName="TAPCHIRowDeleting" msprop:Generator_RowChangingName="TAPCHIRowChanging" msprop:Generator_RowEvHandlerName="TAPCHIRowChangeEventHandler" msprop:Generator_RowDeletedName="TAPCHIRowDeleted" msprop:Generator_UserTableName="TAPCHI" msprop:Generator_RowChangedName="TAPCHIRowChanged" msprop:Generator_RowEvArgName="TAPCHIRowChangeEvent" msprop:Generator_RowClassName="TAPCHIRow">
+        <xs:element name="TAPCHI" msprop:Generator_TableClassName="TAPCHIDataTable" msprop:Generator_TableVarName="tableTAPCHI" msprop:Generator_RowChangedName="TAPCHIRowChanged" msprop:Generator_TablePropName="TAPCHI" msprop:Generator_RowDeletingName="TAPCHIRowDeleting" msprop:Generator_RowChangingName="TAPCHIRowChanging" msprop:Generator_RowEvHandlerName="TAPCHIRowChangeEventHandler" msprop:Generator_RowDeletedName="TAPCHIRowDeleted" msprop:Generator_RowClassName="TAPCHIRow" msprop:Generator_UserTableName="TAPCHI" msprop:Generator_RowEvArgName="TAPCHIRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MATC" msprop:Generator_ColumnVarNameInTable="columnMATC" msprop:Generator_ColumnPropNameInRow="MATC" msprop:Generator_ColumnPropNameInTable="MATCColumn" msprop:Generator_UserColumnName="MATC">
@@ -342,7 +342,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PHIEUDATBAO" msprop:Generator_TableClassName="PHIEUDATBAODataTable" msprop:Generator_TableVarName="tablePHIEUDATBAO" msprop:Generator_TablePropName="PHIEUDATBAO" msprop:Generator_RowDeletingName="PHIEUDATBAORowDeleting" msprop:Generator_RowChangingName="PHIEUDATBAORowChanging" msprop:Generator_RowEvHandlerName="PHIEUDATBAORowChangeEventHandler" msprop:Generator_RowDeletedName="PHIEUDATBAORowDeleted" msprop:Generator_UserTableName="PHIEUDATBAO" msprop:Generator_RowChangedName="PHIEUDATBAORowChanged" msprop:Generator_RowEvArgName="PHIEUDATBAORowChangeEvent" msprop:Generator_RowClassName="PHIEUDATBAORow">
+        <xs:element name="PHIEUDATBAO" msprop:Generator_TableClassName="PHIEUDATBAODataTable" msprop:Generator_TableVarName="tablePHIEUDATBAO" msprop:Generator_RowChangedName="PHIEUDATBAORowChanged" msprop:Generator_TablePropName="PHIEUDATBAO" msprop:Generator_RowDeletingName="PHIEUDATBAORowDeleting" msprop:Generator_RowChangingName="PHIEUDATBAORowChanging" msprop:Generator_RowEvHandlerName="PHIEUDATBAORowChangeEventHandler" msprop:Generator_RowDeletedName="PHIEUDATBAORowDeleted" msprop:Generator_RowClassName="PHIEUDATBAORow" msprop:Generator_UserTableName="PHIEUDATBAO" msprop:Generator_RowEvArgName="PHIEUDATBAORowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="SOPHIEU" msprop:Generator_ColumnVarNameInTable="columnSOPHIEU" msprop:Generator_ColumnPropNameInRow="SOPHIEU" msprop:Generator_ColumnPropNameInTable="SOPHIEUColumn" msprop:Generator_UserColumnName="SOPHIEU">
@@ -364,7 +364,7 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CTDATBAO" msprop:Generator_TableClassName="CTDATBAODataTable" msprop:Generator_TableVarName="tableCTDATBAO" msprop:Generator_TablePropName="CTDATBAO" msprop:Generator_RowDeletingName="CTDATBAORowDeleting" msprop:Generator_RowChangingName="CTDATBAORowChanging" msprop:Generator_RowEvHandlerName="CTDATBAORowChangeEventHandler" msprop:Generator_RowDeletedName="CTDATBAORowDeleted" msprop:Generator_UserTableName="CTDATBAO" msprop:Generator_RowChangedName="CTDATBAORowChanged" msprop:Generator_RowEvArgName="CTDATBAORowChangeEvent" msprop:Generator_RowClassName="CTDATBAORow">
+        <xs:element name="CTDATBAO" msprop:Generator_TableClassName="CTDATBAODataTable" msprop:Generator_TableVarName="tableCTDATBAO" msprop:Generator_RowChangedName="CTDATBAORowChanged" msprop:Generator_TablePropName="CTDATBAO" msprop:Generator_RowDeletingName="CTDATBAORowDeleting" msprop:Generator_RowChangingName="CTDATBAORowChanging" msprop:Generator_RowEvHandlerName="CTDATBAORowChangeEventHandler" msprop:Generator_RowDeletedName="CTDATBAORowDeleted" msprop:Generator_RowClassName="CTDATBAORow" msprop:Generator_UserTableName="CTDATBAO" msprop:Generator_RowEvArgName="CTDATBAORowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MATC" msprop:Generator_ColumnVarNameInTable="columnMATC" msprop:Generator_ColumnPropNameInRow="MATC" msprop:Generator_ColumnPropNameInTable="MATCColumn" msprop:Generator_UserColumnName="MATC">
@@ -406,12 +406,17 @@ SELECT MATC, SOPHIEU, THANGBD, THANGKT, SOTIEN FROM CTDATBAO WHERE (MATC = @MATC
       <xs:field xpath="mstns:MATC" />
       <xs:field xpath="mstns:SOPHIEU" />
     </xs:unique>
+    <xs:keyref name="FK_CTDATBAO_TAPCHI" refer="TAPCHI_Constraint1" msdata:ConstraintOnly="true" msdata:AcceptRejectRule="Cascade">
+      <xs:selector xpath=".//mstns:CTDATBAO" />
+      <xs:field xpath="mstns:MATC" />
+    </xs:keyref>
+    <xs:keyref name="FK_CTDATBAO_PHIEUDATBAO" refer="PHIEUDATBAO_Constraint1" msdata:ConstraintOnly="true" msdata:AcceptRejectRule="Cascade">
+      <xs:selector xpath=".//mstns:CTDATBAO" />
+      <xs:field xpath="mstns:SOPHIEU" />
+    </xs:keyref>
+    <xs:keyref name="FK_PHIEUDATBAO_KHACHHANG" refer="Constraint1" msdata:ConstraintOnly="true" msdata:AcceptRejectRule="Cascade">
+      <xs:selector xpath=".//mstns:PHIEUDATBAO" />
+      <xs:field xpath="mstns:MAKH" />
+    </xs:keyref>
   </xs:element>
-  <xs:annotation>
-    <xs:appinfo>
-      <msdata:Relationship name="FK_PHIEUDATBAO_KHACHHANG" msdata:parent="KHACHHANG" msdata:child="PHIEUDATBAO" msdata:parentkey="MAKH" msdata:childkey="MAKH" msprop:Generator_UserChildTable="PHIEUDATBAO" msprop:Generator_ChildPropName="GetPHIEUDATBAORows" msprop:Generator_UserRelationName="FK_PHIEUDATBAO_KHACHHANG" msprop:Generator_ParentPropName="KHACHHANGRow" msprop:Generator_RelationVarName="relationFK_PHIEUDATBAO_KHACHHANG" msprop:Generator_UserParentTable="KHACHHANG" />
-      <msdata:Relationship name="FK_CTDATBAO_PHIEUDATBAO" msdata:parent="PHIEUDATBAO" msdata:child="CTDATBAO" msdata:parentkey="SOPHIEU" msdata:childkey="SOPHIEU" msprop:Generator_UserChildTable="CTDATBAO" msprop:Generator_ChildPropName="GetCTDATBAORows" msprop:Generator_UserRelationName="FK_CTDATBAO_PHIEUDATBAO" msprop:Generator_ParentPropName="PHIEUDATBAORow" msprop:Generator_RelationVarName="relationFK_CTDATBAO_PHIEUDATBAO" msprop:Generator_UserParentTable="PHIEUDATBAO" />
-      <msdata:Relationship name="FK_CTDATBAO_TAPCHI" msdata:parent="TAPCHI" msdata:child="CTDATBAO" msdata:parentkey="MATC" msdata:childkey="MATC" msprop:Generator_UserChildTable="CTDATBAO" msprop:Generator_ChildPropName="GetCTDATBAORows" msprop:Generator_UserRelationName="FK_CTDATBAO_TAPCHI" msprop:Generator_ParentPropName="TAPCHIRow" msprop:Generator_RelationVarName="relationFK_CTDATBAO_TAPCHI" msprop:Generator_UserParentTable="TAPCHI" />
-    </xs:appinfo>
-  </xs:annotation>
 </xs:schema>

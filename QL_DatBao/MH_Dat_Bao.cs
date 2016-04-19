@@ -15,6 +15,8 @@ namespace QL_DatBao
         //
         Class.XL_CTDATBAO Bang_CTDATBAO;
         Class.XL_TAPCHI Bang_TAPCHI;
+        //
+        private bool is_editting = false;
 
         public MH_Dat_Bao()
         {
@@ -31,7 +33,8 @@ namespace QL_DatBao
             //
             Bang_KHACHHANG.Columns["MAKH"].ReadOnly = true;
             cb_makh.DataSource = Bang_KHACHHANG;
-            cb_makh.DisplayMember = cb_makh.ValueMember = "MAKH";
+            cb_makh.DisplayMember = "MAKH";
+            cb_makh.ValueMember = "MAKH";
             cb_makh.SelectedIndex = -1;
 
             // Liên kết dữ liệu
@@ -58,11 +61,10 @@ namespace QL_DatBao
 
         private void DS_KHACHHANG_PositionChanged(object sender, EventArgs e)
         {
-            if (btn_ghi.Enabled)
-                btn_khongghi.PerformClick();
-
             // Load chi tiết đặt báo vào gridview
             dg_chitietdatbao.DataSource = Bang_CTDATBAO.layDsChiTiet(txt_sophieu.Text, cb_makh.SelectedValue.ToString());
+            dg_chitietdatbao.Columns["SOPHIEU"].Visible = false;
+            update_control_ctdatbao();
         }
 
         private void DS_PHIEUDATBAO_PositionChanged(object sender, EventArgs e)
@@ -88,7 +90,7 @@ namespace QL_DatBao
 
         private void btn_cuoi_Click(object sender, EventArgs e)
         {
-            DS_PHIEUDATBAO.Position = DS_PHIEUDATBAO.Count;
+            DS_PHIEUDATBAO.Position = DS_PHIEUDATBAO.Count -1;
         }
 
         private void dg_chitietdatbao_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -108,27 +110,151 @@ namespace QL_DatBao
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-
+            btn_them.Enabled = !btn_them.Enabled;
+            btn_sua.Enabled = !btn_sua.Enabled;
+            btn_xoa.Enabled = !btn_xoa.Enabled;
+            btn_ghi.Enabled = !btn_ghi.Enabled;
+            btn_khongghi.Enabled = !btn_khongghi.Enabled;
+            btn_in.Enabled = !btn_in.Enabled;
+            //
+            cb_makh.Enabled = !cb_makh.Enabled;
+            //dtp_ngaydat.Enabled = false;
+            dtp_ngaydat.Value = DateTime.Now;
+            txt_sophieu.Enabled = true;
+            txt_sophieu.Text = "";
+            cb_makh.SelectedIndex = -1;
+            txt_tenkh.Text = "";
+            txt_diachi.Text = "";
+            txt_sdt.Text = "";
+            txt_tongsotien.Text = "N/a";
+            //
+            btn_dau.Enabled = btn_cuoi.Enabled = btn_lui.Enabled = btn_toi.Enabled = false;
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
         {
+            if (Bang_PHIEUDATBAO.Count < 1)
+                return;
 
+            DialogResult r = MessageBox.Show("Bạn có muốn xóa đơn hàng đang chọn không?", "Hỏi???", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (r == DialogResult.Yes)
+            {
+                Bang_PHIEUDATBAO.Rows[DS_PHIEUDATBAO.Position].Delete();
+                Bang_PHIEUDATBAO.Write();
+
+                update_control_ctdatbao();
+            }
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-
+            btn_them.Enabled = !btn_them.Enabled;
+            btn_sua.Enabled = !btn_sua.Enabled;
+            btn_xoa.Enabled = !btn_xoa.Enabled;
+            btn_ghi.Enabled = !btn_ghi.Enabled;
+            btn_khongghi.Enabled = !btn_khongghi.Enabled;
+            btn_in.Enabled = !btn_in.Enabled;
+            //
+            cb_makh.Enabled = !cb_makh.Enabled;
+            dtp_ngaydat.Enabled = true;
+            //
+            txt_sophieu.Enabled = false;
+            is_editting = true;
+            //
+            btn_dau.Enabled = btn_cuoi.Enabled = btn_lui.Enabled = btn_toi.Enabled = false;
         }
 
         private void btn_ghi_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (is_editting)
+                {
+                    //Bang_PHIEUDATBAO.Rows[DS_PHIEUDATBAO.Position]["MAKH"] = cb_makh.SelectedValue;
+                    //Bang_PHIEUDATBAO.Rows[DS_PHIEUDATBAO.Position]["NGAYDAT"] = dtp_ngaydat.Value;
+                    //Bang_PHIEUDATBAO.Rows[DS_PHIEUDATBAO.Position].AcceptChanges();
+                    //Bang_PHIEUDATBAO.Write();
+                    DataRow r = Bang_PHIEUDATBAO.NewRow();
+                    r["MAKH"] = cb_makh.SelectedValue;
+                    r["SOPHIEU"] = txt_sophieu.Text.Trim();
+                    r["NGAYDAT"] = dtp_ngaydat.Value;
+                    //
+                    System.Data.SqlClient.SqlConnection con = Bang_PHIEUDATBAO.con;
+                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("UPDATE PHIEUDATBAO SET MAKH = @MAKH, NGAYDAT = @NGAYDAT WHERE SOPHIEU = @SOPHIEU", con);
+                    cmd.Parameters.AddWithValue("@SOPHIEU", r["SOPHIEU"]);
+                    cmd.Parameters.AddWithValue("@NGAYDAT", r["NGAYDAT"]);
+                    cmd.Parameters.AddWithValue("@MAKH", r["MAKH"]);
+                    cmd.ExecuteNonQuery();
+                    //
+                    Bang_PHIEUDATBAO.Read();
+                    is_editting = false;
+                }
+                else
+                {
+                    DataRow r = Bang_PHIEUDATBAO.NewRow();
+                    r["MAKH"] = cb_makh.SelectedValue;
+                    r["SOPHIEU"] = txt_sophieu.Text.Trim();
+                    r["NGAYDAT"] = dtp_ngaydat.Value;
+                    //
+                    System.Data.SqlClient.SqlConnection con = Bang_PHIEUDATBAO.con;
+                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("INSERT INTO PHIEUDATBAO (SOPHIEU, MAKH, NGAYDAT) VALUES(@SOPHIEU, @MAKH, @NGAYDAT)", con);
+                    cmd.Parameters.AddWithValue("@SOPHIEU", r["SOPHIEU"]);
+                    cmd.Parameters.AddWithValue("@NGAYDAT", r["NGAYDAT"]);
+                    cmd.Parameters.AddWithValue("@MAKH", r["MAKH"]);
+                    cmd.ExecuteNonQuery();
+                    //
+                    Bang_PHIEUDATBAO.Read();
+                    btn_cuoi.PerformClick();
+                    //
+                    //Bang_PHIEUDATBAO.Rows.Add(r);
+                    //Bang_PHIEUDATBAO.AcceptChanges();
+                    //Bang_PHIEUDATBAO.Write();
+                }
 
+                btn_them.Enabled = !btn_them.Enabled;
+                btn_sua.Enabled = !btn_sua.Enabled;
+                btn_xoa.Enabled = !btn_xoa.Enabled;
+                btn_ghi.Enabled = !btn_ghi.Enabled;
+                btn_khongghi.Enabled = !btn_khongghi.Enabled;
+                btn_in.Enabled = !btn_in.Enabled;
+                //
+                cb_makh.Enabled = !cb_makh.Enabled;
+                dtp_ngaydat.Enabled = false;
+                txt_sophieu.Enabled = false;
+                //
+                btn_dau.Enabled = btn_cuoi.Enabled = btn_lui.Enabled = btn_toi.Enabled = true;
+                //
+                Bang_KHACHHANG.Read();
+                Bang_TAPCHI.Read();
+                Bang_PHIEUDATBAO.Read();
+                Bang_CTDATBAO.Read();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_khongghi_Click(object sender, EventArgs e)
         {
-
+            btn_them.Enabled = !btn_them.Enabled;
+            btn_sua.Enabled = !btn_sua.Enabled;
+            btn_xoa.Enabled = !btn_xoa.Enabled;
+            btn_ghi.Enabled = !btn_ghi.Enabled;
+            btn_khongghi.Enabled = !btn_khongghi.Enabled;
+            btn_in.Enabled = !btn_in.Enabled;
+            //
+            cb_makh.Enabled = !cb_makh.Enabled;
+            dtp_ngaydat.Enabled = false;
+            txt_sophieu.Enabled = false;
+            //
+            Bang_PHIEUDATBAO.RejectChanges();
+            Bang_KHACHHANG.RejectChanges();
+            Bang_TAPCHI.RejectChanges();
+            Bang_CTDATBAO.RejectChanges();
+            //
+            btn_dau.Enabled = btn_cuoi.Enabled = btn_lui.Enabled = btn_toi.Enabled = true;
         }
 
         private void btn_in_Click(object sender, EventArgs e)
@@ -145,6 +271,12 @@ namespace QL_DatBao
             // Rút trích dữ liệu bảng CTDATBAO
             dt[1] = Bang_CTDATBAO.FindBySOPHIEU(SOPHIEU);
             dt[1].TableName = "CTDATBAO";
+            //
+            if (dt[1].Rows.Count < 1)
+            {
+                MessageBox.Show("Không có dữ liệu gì để in!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             ds.Tables.Add(dt[1].Copy());
             dt[1].Dispose();
             // Rút trích dữ liệu bảng TAPCHI
@@ -163,6 +295,26 @@ namespace QL_DatBao
             MH_In_BC f = new MH_In_BC(ds);
             f.StartPosition = FormStartPosition.CenterScreen;
             f.ShowDialog();
+        }
+
+        private void btn_refresh_khachhang_Click(object sender, EventArgs e)
+        {
+            Bang_KHACHHANG.Read();
+        }
+
+        // Cập nhật trạng thái nút thao tác với chi tiết đặt báo
+        private void update_control_ctdatbao()
+        {
+            if (dg_chitietdatbao.Rows.Count > 0)
+            {
+                btn_chitiet_sua.Enabled = true;
+                btn_chitiet_xoa.Enabled = true;
+            }
+            else
+            {
+                btn_chitiet_sua.Enabled = false;
+                btn_chitiet_xoa.Enabled = false;
+            }
         }
     }
 }

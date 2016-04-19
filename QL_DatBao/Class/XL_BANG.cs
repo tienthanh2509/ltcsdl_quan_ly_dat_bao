@@ -10,12 +10,13 @@ namespace QL_DatBao.Class
         //
         public static string connectionString;
         //
-        protected SqlConnection con;
-        protected SqlDataAdapter da;
-        protected DataTable dt;
+        public SqlConnection con;
+        public SqlDataAdapter da;
+        public DataTable dt;
+        public SqlCommand cmd;
         //
         protected string sql;
-        protected string tableName;
+        public string tableName;
         #region Set Get thuộc tính
         //public string Sql
         //{
@@ -58,6 +59,21 @@ namespace QL_DatBao.Class
         #endregion
 
         #region Hàm xử lý truy vấn
+        public void close()
+        {
+            if (con.State == ConnectionState.Closed)
+                con.Open();
+        }
+
+        public SqlCommand getCMD(string sql)
+        {
+            if (con.State == ConnectionState.Closed)
+                con.Open();
+
+            cmd = new SqlCommand(sql, con);
+
+            return cmd;
+        }
         public DataTable ExecuteQuery(string sql)
         {
             try
@@ -90,7 +106,6 @@ namespace QL_DatBao.Class
                 if (con.State == ConnectionState.Closed)
                     con.Open();
 
-                con.Open();
                 SqlCommand cmd = new SqlCommand(strSQL, con);
 
                 return cmd.ExecuteNonQuery();
@@ -115,7 +130,6 @@ namespace QL_DatBao.Class
                     con.Open();
 
                 SqlCommand cmd = new SqlCommand(function, con);
-                con.Open();
                 Object result = cmd.ExecuteScalar();
 
                 return result;
@@ -140,10 +154,12 @@ namespace QL_DatBao.Class
         {
             try
             {
+                if (con.State == ConnectionState.Closed)
+                    con.Open();
+
                 if (sql == "")
                     sql = "SELECT * FROM " + tableName;
 
-                con.Open();
                 da = new SqlDataAdapter(sql, con);
                 da.FillSchema(this, SchemaType.Mapped);
                 da.Fill(this);
@@ -176,7 +192,7 @@ namespace QL_DatBao.Class
         }
 
         //Lọc Dữ Liệu
-        public void Loc_du_lieu(string dieu_kien)
+        public void Filter(string dieu_kien)
         {
             try
             {

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -56,16 +56,21 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.dg_chitietdatbao = new System.Windows.Forms.DataGridView();
+            this.btn_refresh_khachhang = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MATC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.THANGBD = new DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn();
-            this.THANGKT = new DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn();
+            this.THANGBD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.THANGKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_chitiet_them = new System.Windows.Forms.Button();
+            this.btn_chitiet_sua = new System.Windows.Forms.Button();
+            this.btn_chitiet_xoa = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_chitietdatbao)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,6 +87,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_refresh_khachhang);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.btn_in);
             this.groupBox1.Controls.Add(this.btn_khongghi);
@@ -109,7 +115,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(12, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(927, 152);
+            this.groupBox1.Size = new System.Drawing.Size(937, 152);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu đặt báo";
@@ -227,11 +233,16 @@
             // 
             // dtp_ngaydat
             // 
+            this.dtp_ngaydat.CustomFormat = "";
+            this.dtp_ngaydat.Enabled = false;
             this.dtp_ngaydat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_ngaydat.Location = new System.Drawing.Point(431, 22);
+            this.dtp_ngaydat.MaxDate = new System.DateTime(2099, 12, 31, 0, 0, 0, 0);
+            this.dtp_ngaydat.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtp_ngaydat.Name = "dtp_ngaydat";
             this.dtp_ngaydat.Size = new System.Drawing.Size(172, 20);
             this.dtp_ngaydat.TabIndex = 13;
+            this.dtp_ngaydat.Value = new System.DateTime(2016, 4, 19, 11, 35, 44, 0);
             // 
             // txt_tongsotien
             // 
@@ -278,6 +289,7 @@
             // 
             // cb_makh
             // 
+            this.cb_makh.Enabled = false;
             this.cb_makh.FormattingEnabled = true;
             this.cb_makh.Location = new System.Drawing.Point(98, 48);
             this.cb_makh.Name = "cb_makh";
@@ -286,6 +298,7 @@
             // 
             // txt_sophieu
             // 
+            this.txt_sophieu.Enabled = false;
             this.txt_sophieu.Location = new System.Drawing.Point(98, 22);
             this.txt_sophieu.Name = "txt_sophieu";
             this.txt_sophieu.Size = new System.Drawing.Size(181, 20);
@@ -345,17 +358,10 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Số phiếu";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 202);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Chi tiết đặt báo";
-            // 
             // dg_chitietdatbao
             // 
+            this.dg_chitietdatbao.AllowUserToAddRows = false;
+            this.dg_chitietdatbao.AllowUserToDeleteRows = false;
             this.dg_chitietdatbao.BackgroundColor = System.Drawing.Color.SeaGreen;
             this.dg_chitietdatbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_chitietdatbao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -365,11 +371,22 @@
             this.THANGBD,
             this.THANGKT,
             this.SOTIEN});
-            this.dg_chitietdatbao.Location = new System.Drawing.Point(12, 218);
+            this.dg_chitietdatbao.Location = new System.Drawing.Point(5, 19);
             this.dg_chitietdatbao.Name = "dg_chitietdatbao";
+            this.dg_chitietdatbao.ReadOnly = true;
             this.dg_chitietdatbao.Size = new System.Drawing.Size(926, 232);
             this.dg_chitietdatbao.TabIndex = 3;
             this.dg_chitietdatbao.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dg_chitietdatbao_DataBindingComplete);
+            // 
+            // btn_refresh_khachhang
+            // 
+            this.btn_refresh_khachhang.Location = new System.Drawing.Point(285, 48);
+            this.btn_refresh_khachhang.Name = "btn_refresh_khachhang";
+            this.btn_refresh_khachhang.Size = new System.Drawing.Size(21, 21);
+            this.btn_refresh_khachhang.TabIndex = 26;
+            this.btn_refresh_khachhang.Text = "@";
+            this.btn_refresh_khachhang.UseVisualStyleBackColor = true;
+            this.btn_refresh_khachhang.Click += new System.EventHandler(this.btn_refresh_khachhang_Click);
             // 
             // STT
             // 
@@ -384,63 +401,91 @@
             this.MATC.DataPropertyName = "MATC";
             this.MATC.HeaderText = "Mã Tạp Chí";
             this.MATC.Name = "MATC";
+            this.MATC.ReadOnly = true;
             // 
             // TENTC
             // 
             this.TENTC.DataPropertyName = "TENTC";
             this.TENTC.HeaderText = "Tên Tạp Chí";
             this.TENTC.Name = "TENTC";
+            this.TENTC.ReadOnly = true;
             this.TENTC.Width = 300;
             // 
             // THANGBD
             // 
-            // 
-            // 
-            // 
-            this.THANGBD.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.THANGBD.BackgroundStyle.Class = "DataGridViewNumericBorder";
-            this.THANGBD.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.THANGBD.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText;
             this.THANGBD.DataPropertyName = "THANGBD";
-            this.THANGBD.HeaderText = "Tháng Bắt Đầu";
-            this.THANGBD.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            this.THANGBD.HeaderText = "Tháng bắt đầu";
             this.THANGBD.Name = "THANGBD";
-            this.THANGBD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.THANGBD.ReadOnly = true;
             this.THANGBD.Width = 120;
             // 
             // THANGKT
             // 
-            // 
-            // 
-            // 
-            this.THANGKT.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.THANGKT.BackgroundStyle.Class = "DataGridViewNumericBorder";
-            this.THANGKT.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.THANGKT.BackgroundStyle.TextColor = System.Drawing.SystemColors.ControlText;
             this.THANGKT.DataPropertyName = "THANGKT";
-            this.THANGKT.HeaderText = "Tháng Kết Thúc";
-            this.THANGKT.InputHorizontalAlignment = DevComponents.Editors.eHorizontalAlignment.Left;
+            this.THANGKT.HeaderText = "Tháng kết thúc";
             this.THANGKT.Name = "THANGKT";
-            this.THANGKT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.THANGKT.ReadOnly = true;
             this.THANGKT.Width = 120;
             // 
             // SOTIEN
             // 
             this.SOTIEN.DataPropertyName = "SOTIEN";
-            dataGridViewCellStyle11.Format = "#,0";
-            dataGridViewCellStyle11.NullValue = "N/a";
-            this.SOTIEN.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Format = "#,0";
+            dataGridViewCellStyle3.NullValue = "N/a";
+            this.SOTIEN.DefaultCellStyle = dataGridViewCellStyle3;
             this.SOTIEN.HeaderText = "Số Tiền";
             this.SOTIEN.Name = "SOTIEN";
+            this.SOTIEN.ReadOnly = true;
             this.SOTIEN.Width = 165;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_chitiet_xoa);
+            this.groupBox2.Controls.Add(this.btn_chitiet_sua);
+            this.groupBox2.Controls.Add(this.btn_chitiet_them);
+            this.groupBox2.Controls.Add(this.dg_chitietdatbao);
+            this.groupBox2.Location = new System.Drawing.Point(12, 205);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(937, 260);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Chi tiết đặt báo";
+            // 
+            // btn_chitiet_them
+            // 
+            this.btn_chitiet_them.Location = new System.Drawing.Point(694, 228);
+            this.btn_chitiet_them.Name = "btn_chitiet_them";
+            this.btn_chitiet_them.Size = new System.Drawing.Size(75, 23);
+            this.btn_chitiet_them.TabIndex = 27;
+            this.btn_chitiet_them.Text = "Thêm";
+            this.btn_chitiet_them.UseVisualStyleBackColor = true;
+            // 
+            // btn_chitiet_sua
+            // 
+            this.btn_chitiet_sua.Enabled = false;
+            this.btn_chitiet_sua.Location = new System.Drawing.Point(775, 228);
+            this.btn_chitiet_sua.Name = "btn_chitiet_sua";
+            this.btn_chitiet_sua.Size = new System.Drawing.Size(75, 23);
+            this.btn_chitiet_sua.TabIndex = 27;
+            this.btn_chitiet_sua.Text = "Sửa";
+            this.btn_chitiet_sua.UseVisualStyleBackColor = true;
+            // 
+            // btn_chitiet_xoa
+            // 
+            this.btn_chitiet_xoa.Enabled = false;
+            this.btn_chitiet_xoa.Location = new System.Drawing.Point(856, 228);
+            this.btn_chitiet_xoa.Name = "btn_chitiet_xoa";
+            this.btn_chitiet_xoa.Size = new System.Drawing.Size(75, 23);
+            this.btn_chitiet_xoa.TabIndex = 27;
+            this.btn_chitiet_xoa.Text = "Xóa";
+            this.btn_chitiet_xoa.UseVisualStyleBackColor = true;
             // 
             // MH_Dat_Bao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 458);
-            this.Controls.Add(this.dg_chitietdatbao);
-            this.Controls.Add(this.label9);
+            this.ClientSize = new System.Drawing.Size(1089, 493);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "MH_Dat_Bao";
@@ -449,6 +494,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_chitietdatbao)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,14 +528,18 @@
         private System.Windows.Forms.Button btn_toi;
         private System.Windows.Forms.Button btn_lui;
         private System.Windows.Forms.Button btn_dau;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dg_chitietdatbao;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btn_refresh_khachhang;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn MATC;
         private System.Windows.Forms.DataGridViewTextBoxColumn TENTC;
-        private DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn THANGBD;
-        private DevComponents.DotNetBar.Controls.DataGridViewIntegerInputColumn THANGKT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn THANGBD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn THANGKT;
         private System.Windows.Forms.DataGridViewTextBoxColumn SOTIEN;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btn_chitiet_sua;
+        private System.Windows.Forms.Button btn_chitiet_them;
+        private System.Windows.Forms.Button btn_chitiet_xoa;
     }
 }

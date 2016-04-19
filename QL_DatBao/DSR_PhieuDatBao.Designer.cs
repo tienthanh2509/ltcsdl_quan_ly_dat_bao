@@ -32,12 +32,6 @@ namespace QL_DatBao {
         
         private CTDATBAODataTable tableCTDATBAO;
         
-        private global::System.Data.DataRelation relationFK_PHIEUDATBAO_KHACHHANG;
-        
-        private global::System.Data.DataRelation relationFK_CTDATBAO_PHIEUDATBAO;
-        
-        private global::System.Data.DataRelation relationFK_CTDATBAO_TAPCHI;
-        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -272,9 +266,6 @@ namespace QL_DatBao {
                     this.tableCTDATBAO.InitVars();
                 }
             }
-            this.relationFK_PHIEUDATBAO_KHACHHANG = this.Relations["FK_PHIEUDATBAO_KHACHHANG"];
-            this.relationFK_CTDATBAO_PHIEUDATBAO = this.Relations["FK_CTDATBAO_PHIEUDATBAO"];
-            this.relationFK_CTDATBAO_TAPCHI = this.Relations["FK_CTDATBAO_TAPCHI"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -293,18 +284,28 @@ namespace QL_DatBao {
             base.Tables.Add(this.tablePHIEUDATBAO);
             this.tableCTDATBAO = new CTDATBAODataTable();
             base.Tables.Add(this.tableCTDATBAO);
-            this.relationFK_PHIEUDATBAO_KHACHHANG = new global::System.Data.DataRelation("FK_PHIEUDATBAO_KHACHHANG", new global::System.Data.DataColumn[] {
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_PHIEUDATBAO_KHACHHANG", new global::System.Data.DataColumn[] {
                         this.tableKHACHHANG.MAKHColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHIEUDATBAO.MAKHColumn}, false);
-            this.Relations.Add(this.relationFK_PHIEUDATBAO_KHACHHANG);
-            this.relationFK_CTDATBAO_PHIEUDATBAO = new global::System.Data.DataRelation("FK_CTDATBAO_PHIEUDATBAO", new global::System.Data.DataColumn[] {
-                        this.tablePHIEUDATBAO.SOPHIEUColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCTDATBAO.SOPHIEUColumn}, false);
-            this.Relations.Add(this.relationFK_CTDATBAO_PHIEUDATBAO);
-            this.relationFK_CTDATBAO_TAPCHI = new global::System.Data.DataRelation("FK_CTDATBAO_TAPCHI", new global::System.Data.DataColumn[] {
+                        this.tablePHIEUDATBAO.MAKHColumn});
+            this.tablePHIEUDATBAO.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_CTDATBAO_TAPCHI", new global::System.Data.DataColumn[] {
                         this.tableTAPCHI.MATCColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCTDATBAO.MATCColumn}, false);
-            this.Relations.Add(this.relationFK_CTDATBAO_TAPCHI);
+                        this.tableCTDATBAO.MATCColumn});
+            this.tableCTDATBAO.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_CTDATBAO_PHIEUDATBAO", new global::System.Data.DataColumn[] {
+                        this.tablePHIEUDATBAO.SOPHIEUColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCTDATBAO.SOPHIEUColumn});
+            this.tableCTDATBAO.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1143,16 +1144,13 @@ namespace QL_DatBao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PHIEUDATBAORow AddPHIEUDATBAORow(string SOPHIEU, KHACHHANGRow parentKHACHHANGRowByFK_PHIEUDATBAO_KHACHHANG, System.DateTime NGAYDAT, decimal TONGSOTIEN) {
+            public PHIEUDATBAORow AddPHIEUDATBAORow(string SOPHIEU, string MAKH, System.DateTime NGAYDAT, decimal TONGSOTIEN) {
                 PHIEUDATBAORow rowPHIEUDATBAORow = ((PHIEUDATBAORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SOPHIEU,
-                        null,
+                        MAKH,
                         NGAYDAT,
                         TONGSOTIEN};
-                if ((parentKHACHHANGRowByFK_PHIEUDATBAO_KHACHHANG != null)) {
-                    columnValuesArray[1] = parentKHACHHANGRowByFK_PHIEUDATBAO_KHACHHANG[0];
-                }
                 rowPHIEUDATBAORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPHIEUDATBAORow);
                 return rowPHIEUDATBAORow;
@@ -1460,20 +1458,14 @@ namespace QL_DatBao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CTDATBAORow AddCTDATBAORow(TAPCHIRow parentTAPCHIRowByFK_CTDATBAO_TAPCHI, PHIEUDATBAORow parentPHIEUDATBAORowByFK_CTDATBAO_PHIEUDATBAO, int THANGBD, int THANGKT, decimal SOTIEN) {
+            public CTDATBAORow AddCTDATBAORow(string MATC, string SOPHIEU, int THANGBD, int THANGKT, decimal SOTIEN) {
                 CTDATBAORow rowCTDATBAORow = ((CTDATBAORow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        null,
+                        MATC,
+                        SOPHIEU,
                         THANGBD,
                         THANGKT,
                         SOTIEN};
-                if ((parentTAPCHIRowByFK_CTDATBAO_TAPCHI != null)) {
-                    columnValuesArray[0] = parentTAPCHIRowByFK_CTDATBAO_TAPCHI[0];
-                }
-                if ((parentPHIEUDATBAORowByFK_CTDATBAO_PHIEUDATBAO != null)) {
-                    columnValuesArray[1] = parentPHIEUDATBAORowByFK_CTDATBAO_PHIEUDATBAO[0];
-                }
                 rowCTDATBAORow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCTDATBAORow);
                 return rowCTDATBAORow;
@@ -1734,17 +1726,6 @@ namespace QL_DatBao {
             public void SetDIENTHOAINull() {
                 this[this.tableKHACHHANG.DIENTHOAIColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PHIEUDATBAORow[] GetPHIEUDATBAORows() {
-                if ((this.Table.ChildRelations["FK_PHIEUDATBAO_KHACHHANG"] == null)) {
-                    return new PHIEUDATBAORow[0];
-                }
-                else {
-                    return ((PHIEUDATBAORow[])(base.GetChildRows(this.Table.ChildRelations["FK_PHIEUDATBAO_KHACHHANG"])));
-                }
-            }
         }
         
         /// <summary>
@@ -1832,17 +1813,6 @@ namespace QL_DatBao {
             public void SetNHAXBNull() {
                 this[this.tableTAPCHI.NHAXBColumn] = global::System.Convert.DBNull;
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CTDATBAORow[] GetCTDATBAORows() {
-                if ((this.Table.ChildRelations["FK_CTDATBAO_TAPCHI"] == null)) {
-                    return new CTDATBAORow[0];
-                }
-                else {
-                    return ((CTDATBAORow[])(base.GetChildRows(this.Table.ChildRelations["FK_CTDATBAO_TAPCHI"])));
-                }
-            }
         }
         
         /// <summary>
@@ -1910,17 +1880,6 @@ namespace QL_DatBao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public KHACHHANGRow KHACHHANGRow {
-                get {
-                    return ((KHACHHANGRow)(this.GetParentRow(this.Table.ParentRelations["FK_PHIEUDATBAO_KHACHHANG"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_PHIEUDATBAO_KHACHHANG"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsTONGSOTIENNull() {
                 return this.IsNull(this.tablePHIEUDATBAO.TONGSOTIENColumn);
             }
@@ -1929,17 +1888,6 @@ namespace QL_DatBao {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetTONGSOTIENNull() {
                 this[this.tablePHIEUDATBAO.TONGSOTIENColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CTDATBAORow[] GetCTDATBAORows() {
-                if ((this.Table.ChildRelations["FK_CTDATBAO_PHIEUDATBAO"] == null)) {
-                    return new CTDATBAORow[0];
-                }
-                else {
-                    return ((CTDATBAORow[])(base.GetChildRows(this.Table.ChildRelations["FK_CTDATBAO_PHIEUDATBAO"])));
-                }
             }
         }
         
@@ -2009,28 +1957,6 @@ namespace QL_DatBao {
                 }
                 set {
                     this[this.tableCTDATBAO.SOTIENColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PHIEUDATBAORow PHIEUDATBAORow {
-                get {
-                    return ((PHIEUDATBAORow)(this.GetParentRow(this.Table.ParentRelations["FK_CTDATBAO_PHIEUDATBAO"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CTDATBAO_PHIEUDATBAO"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TAPCHIRow TAPCHIRow {
-                get {
-                    return ((TAPCHIRow)(this.GetParentRow(this.Table.ParentRelations["FK_CTDATBAO_TAPCHI"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CTDATBAO_TAPCHI"]);
                 }
             }
         }
