@@ -126,6 +126,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSR_PhieuDatBao.xsd</DependentUpon>
     </Compile>
+    <Compile Include="MH_ChiTietDatBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MH_ChiTietDatBao.Designer.cs">
+      <DependentUpon>MH_ChiTietDatBao.cs</DependentUpon>
+    </Compile>
     <Compile Include="MH_Dang_Nhap.cs">
       <SubType>Form</SubType>
     </Compile>

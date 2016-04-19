@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -61,9 +62,6 @@ namespace QL_DatBao
 
         private void DS_KHACHHANG_PositionChanged(object sender, EventArgs e)
         {
-            // Load chi tiết đặt báo vào gridview
-            dg_chitietdatbao.DataSource = Bang_CTDATBAO.layDsChiTiet(txt_sophieu.Text, cb_makh.SelectedValue.ToString());
-            dg_chitietdatbao.Columns["SOPHIEU"].Visible = false;
             update_control_ctdatbao();
         }
 
@@ -90,7 +88,7 @@ namespace QL_DatBao
 
         private void btn_cuoi_Click(object sender, EventArgs e)
         {
-            DS_PHIEUDATBAO.Position = DS_PHIEUDATBAO.Count -1;
+            DS_PHIEUDATBAO.Position = DS_PHIEUDATBAO.Count - 1;
         }
 
         private void dg_chitietdatbao_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -305,6 +303,10 @@ namespace QL_DatBao
         // Cập nhật trạng thái nút thao tác với chi tiết đặt báo
         private void update_control_ctdatbao()
         {
+            // Load chi tiết đặt báo vào gridview
+            dg_chitietdatbao.DataSource = Bang_CTDATBAO.layDsChiTiet(txt_sophieu.Text, cb_makh.SelectedValue.ToString());
+            dg_chitietdatbao.Columns["SOPHIEU"].Visible = false;
+
             if (dg_chitietdatbao.Rows.Count > 0)
             {
                 btn_chitiet_sua.Enabled = true;
@@ -329,7 +331,53 @@ namespace QL_DatBao
 
         private void btn_chitiet_xoa_Click(object sender, EventArgs e)
         {
+            if (dg_chitietdatbao.Rows.Count < 1)
+                return;
 
+            DialogResult r = MessageBox.Show("Bạn có muốn xóa chi tiết đơn hàng đang chọn không?", "Hỏi???", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+            if (r == DialogResult.Yes)
+            {
+                // Kết nối CSDL
+                SqlConnection con = Bang_CTDATBAO.con;
+
+                try
+                {
+                    // Mở kết nối nếu chưa mở
+                    if (con.State == ConnectionState.Closed)
+                        con.Open();
+                    // Khởi tạo sql cmd
+                    SqlCommand cmd = con.CreateCommand();
+                    // Gán chuỗi lệnh sql
+                    cmd.CommandText = "DELETE FROM CTDATBAO WHERE SOPHIEU = @SOPHIEU AND MATC = @MATC";
+                    // Gán tham số đi kèm
+                    cmd.Parameters.AddWithValue("@SOPHIEU", txt_sophieu.Text);
+                    cmd.Parameters.AddWithValue("@MATC", dg_chitietdatbao.CurrentRow.Cells["MATC"].Value.ToString());
+                    // Thực thi câu lệnh và không trả dữ liệu về
+                    cmd.ExecuteNonQuery();
+                    // Cập nhật lưới
+                    update_control_ctdatbao();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    // Thử ngắt kết nối
+                    try
+                    {
+                        if (con.State == ConnectionState.Open)
+                            con.Close();
+                    }
+                    catch (Exception ex2)
+                    {
+                        Console.WriteLine("Exception Type: {0}", ex2.GetType());
+                        Console.WriteLine("  Message: {0}", ex2.Message);
+                    }
+                }
+            }
         }
     }
 }
