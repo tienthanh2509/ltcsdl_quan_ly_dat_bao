@@ -12,18 +12,26 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Background</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdatePeriodically>true</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <InstallUrl>https://project.d13ht01.tk/LTCSDL/QL_DatBao/</InstallUrl>
+    <UpdateUrl>https://project.d13ht01.tk/LTCSDL/QL_DatBao/</UpdateUrl>
+    <SupportUrl>https://d13ht01.tk</SupportUrl>
+    <ErrorReportUrl>https://debug.d13ht01.tk/</ErrorReportUrl>
+    <ProductName>Quản lý đặt báo</ProductName>
+    <PublisherName>D13HT01</PublisherName>
+    <SuiteName>Quản lý đặt báo</SuiteName>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -50,7 +58,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>207C8C5774E37AE2BCE657746334CE89A240B618</ManifestCertificateThumbprint>
@@ -213,6 +221,7 @@
     <None Include="DSR_PhieuDatBao.xss">
       <DependentUpon>DSR_PhieuDatBao.xsd</DependentUpon>
     </None>
+    <None Include="phamthanh_windows_cer.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -243,6 +252,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QL_DatBao_TemporaryKey.pfx" />
     <None Include="Resources\Interface_Exit-64.png" />
   </ItemGroup>
   <ItemGroup>
