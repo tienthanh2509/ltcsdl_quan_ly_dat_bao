@@ -12,15 +12,40 @@ namespace QL_DatBao
 {
     public partial class MH_ChiTietDatBao : Form
     {
-        public MH_ChiTietDatBao()
+        // 0 = add, 1 = new
+        private int mode = 0;
+        public MH_Dat_Bao f;
+
+        public MH_ChiTietDatBao(int mode = 0)
         {
+            this.mode = mode;
             InitializeComponent();
         }
 
         private void MH_ChiTietDatBao_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSR_PhieuDatBao.TAPCHI' table. You can move, or remove it, as needed.
-            this.tAPCHITableAdapter.Fill(this.dSR_PhieuDatBao.TAPCHI);
+            if(mode == 0)
+            {
+
+            }
+            else if(mode == 1)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Error!");
+                this.Close();
+            }
+        }
+
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_ok_Click(object sender, EventArgs e)
+        {
 
         }
     }

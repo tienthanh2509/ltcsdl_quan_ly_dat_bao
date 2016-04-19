@@ -321,12 +321,16 @@ namespace QL_DatBao
 
         private void btn_chitiet_them_Click(object sender, EventArgs e)
         {
-
+            MH_ChiTietDatBao f = new MH_ChiTietDatBao();
+            f.f = this;
+            f.ShowDialog();
         }
 
         private void btn_chitiet_sua_Click(object sender, EventArgs e)
         {
-
+            MH_ChiTietDatBao f = new MH_ChiTietDatBao(1);
+            f.f = this;
+            f.ShowDialog();
         }
 
         private void btn_chitiet_xoa_Click(object sender, EventArgs e)
