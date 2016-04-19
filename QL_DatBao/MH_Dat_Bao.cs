@@ -321,5 +321,10 @@ namespace QL_DatBao
         {
 
         }
+
+        private void btn_chitiet_sua_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
