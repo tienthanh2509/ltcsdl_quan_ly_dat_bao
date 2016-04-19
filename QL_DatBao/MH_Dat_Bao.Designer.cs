@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_refresh_khachhang = new System.Windows.Forms.Button();
@@ -430,9 +430,9 @@
             // SOTIEN
             // 
             this.SOTIEN.DataPropertyName = "SOTIEN";
-            dataGridViewCellStyle2.Format = "#,0";
-            dataGridViewCellStyle2.NullValue = "N/a";
-            this.SOTIEN.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Format = "#,0";
+            dataGridViewCellStyle3.NullValue = "N/a";
+            this.SOTIEN.DefaultCellStyle = dataGridViewCellStyle3;
             this.SOTIEN.HeaderText = "Số Tiền";
             this.SOTIEN.Name = "SOTIEN";
             this.SOTIEN.ReadOnly = true;
@@ -460,6 +460,7 @@
             this.btn_chitiet_xoa.TabIndex = 27;
             this.btn_chitiet_xoa.Text = "Xóa";
             this.btn_chitiet_xoa.UseVisualStyleBackColor = true;
+            this.btn_chitiet_xoa.Click += new System.EventHandler(this.btn_chitiet_xoa_Click);
             // 
             // btn_chitiet_sua
             // 
