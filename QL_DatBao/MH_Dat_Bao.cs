@@ -316,5 +316,10 @@ namespace QL_DatBao
                 btn_chitiet_xoa.Enabled = false;
             }
         }
+
+        private void btn_chitiet_them_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

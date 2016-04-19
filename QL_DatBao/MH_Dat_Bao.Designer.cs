@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_refresh_khachhang = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.btn_in = new System.Windows.Forms.Button();
             this.btn_khongghi = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dg_chitietdatbao = new System.Windows.Forms.DataGridView();
-            this.btn_refresh_khachhang = new System.Windows.Forms.Button();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MATC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TENTC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,9 +65,9 @@
             this.THANGKT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SOTIEN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_chitiet_them = new System.Windows.Forms.Button();
-            this.btn_chitiet_sua = new System.Windows.Forms.Button();
             this.btn_chitiet_xoa = new System.Windows.Forms.Button();
+            this.btn_chitiet_sua = new System.Windows.Forms.Button();
+            this.btn_chitiet_them = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_chitietdatbao)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -119,6 +119,16 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu đặt báo";
+            // 
+            // btn_refresh_khachhang
+            // 
+            this.btn_refresh_khachhang.Location = new System.Drawing.Point(285, 48);
+            this.btn_refresh_khachhang.Name = "btn_refresh_khachhang";
+            this.btn_refresh_khachhang.Size = new System.Drawing.Size(21, 21);
+            this.btn_refresh_khachhang.TabIndex = 26;
+            this.btn_refresh_khachhang.Text = "@";
+            this.btn_refresh_khachhang.UseVisualStyleBackColor = true;
+            this.btn_refresh_khachhang.Click += new System.EventHandler(this.btn_refresh_khachhang_Click);
             // 
             // label10
             // 
@@ -378,16 +388,6 @@
             this.dg_chitietdatbao.TabIndex = 3;
             this.dg_chitietdatbao.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dg_chitietdatbao_DataBindingComplete);
             // 
-            // btn_refresh_khachhang
-            // 
-            this.btn_refresh_khachhang.Location = new System.Drawing.Point(285, 48);
-            this.btn_refresh_khachhang.Name = "btn_refresh_khachhang";
-            this.btn_refresh_khachhang.Size = new System.Drawing.Size(21, 21);
-            this.btn_refresh_khachhang.TabIndex = 26;
-            this.btn_refresh_khachhang.Text = "@";
-            this.btn_refresh_khachhang.UseVisualStyleBackColor = true;
-            this.btn_refresh_khachhang.Click += new System.EventHandler(this.btn_refresh_khachhang_Click);
-            // 
             // STT
             // 
             this.STT.HeaderText = "STT";
@@ -430,9 +430,9 @@
             // SOTIEN
             // 
             this.SOTIEN.DataPropertyName = "SOTIEN";
-            dataGridViewCellStyle3.Format = "#,0";
-            dataGridViewCellStyle3.NullValue = "N/a";
-            this.SOTIEN.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "#,0";
+            dataGridViewCellStyle1.NullValue = "N/a";
+            this.SOTIEN.DefaultCellStyle = dataGridViewCellStyle1;
             this.SOTIEN.HeaderText = "Số Tiền";
             this.SOTIEN.Name = "SOTIEN";
             this.SOTIEN.ReadOnly = true;
@@ -451,14 +451,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết đặt báo";
             // 
-            // btn_chitiet_them
+            // btn_chitiet_xoa
             // 
-            this.btn_chitiet_them.Location = new System.Drawing.Point(694, 228);
-            this.btn_chitiet_them.Name = "btn_chitiet_them";
-            this.btn_chitiet_them.Size = new System.Drawing.Size(75, 23);
-            this.btn_chitiet_them.TabIndex = 27;
-            this.btn_chitiet_them.Text = "Thêm";
-            this.btn_chitiet_them.UseVisualStyleBackColor = true;
+            this.btn_chitiet_xoa.Enabled = false;
+            this.btn_chitiet_xoa.Location = new System.Drawing.Point(856, 228);
+            this.btn_chitiet_xoa.Name = "btn_chitiet_xoa";
+            this.btn_chitiet_xoa.Size = new System.Drawing.Size(75, 23);
+            this.btn_chitiet_xoa.TabIndex = 27;
+            this.btn_chitiet_xoa.Text = "Xóa";
+            this.btn_chitiet_xoa.UseVisualStyleBackColor = true;
             // 
             // btn_chitiet_sua
             // 
@@ -470,15 +471,15 @@
             this.btn_chitiet_sua.Text = "Sửa";
             this.btn_chitiet_sua.UseVisualStyleBackColor = true;
             // 
-            // btn_chitiet_xoa
+            // btn_chitiet_them
             // 
-            this.btn_chitiet_xoa.Enabled = false;
-            this.btn_chitiet_xoa.Location = new System.Drawing.Point(856, 228);
-            this.btn_chitiet_xoa.Name = "btn_chitiet_xoa";
-            this.btn_chitiet_xoa.Size = new System.Drawing.Size(75, 23);
-            this.btn_chitiet_xoa.TabIndex = 27;
-            this.btn_chitiet_xoa.Text = "Xóa";
-            this.btn_chitiet_xoa.UseVisualStyleBackColor = true;
+            this.btn_chitiet_them.Location = new System.Drawing.Point(694, 228);
+            this.btn_chitiet_them.Name = "btn_chitiet_them";
+            this.btn_chitiet_them.Size = new System.Drawing.Size(75, 23);
+            this.btn_chitiet_them.TabIndex = 27;
+            this.btn_chitiet_them.Text = "Thêm";
+            this.btn_chitiet_them.UseVisualStyleBackColor = true;
+            this.btn_chitiet_them.Click += new System.EventHandler(this.btn_chitiet_them_Click);
             // 
             // MH_Dat_Bao
             // 
