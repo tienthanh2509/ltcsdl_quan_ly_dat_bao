@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_refresh_khachhang = new System.Windows.Forms.Button();
@@ -256,9 +256,9 @@
             // 
             // txt_tongsotien
             // 
-            this.txt_tongsotien.Enabled = false;
             this.txt_tongsotien.Location = new System.Drawing.Point(733, 22);
             this.txt_tongsotien.Name = "txt_tongsotien";
+            this.txt_tongsotien.ReadOnly = true;
             this.txt_tongsotien.Size = new System.Drawing.Size(147, 20);
             this.txt_tongsotien.TabIndex = 12;
             this.txt_tongsotien.Text = "0";
@@ -275,25 +275,25 @@
             // 
             // txt_tenkh
             // 
-            this.txt_tenkh.Enabled = false;
             this.txt_tenkh.Location = new System.Drawing.Point(431, 48);
             this.txt_tenkh.Name = "txt_tenkh";
+            this.txt_tenkh.ReadOnly = true;
             this.txt_tenkh.Size = new System.Drawing.Size(449, 20);
             this.txt_tenkh.TabIndex = 10;
             // 
             // txt_diachi
             // 
-            this.txt_diachi.Enabled = false;
             this.txt_diachi.Location = new System.Drawing.Point(431, 74);
             this.txt_diachi.Name = "txt_diachi";
+            this.txt_diachi.ReadOnly = true;
             this.txt_diachi.Size = new System.Drawing.Size(449, 20);
             this.txt_diachi.TabIndex = 9;
             // 
             // txt_sdt
             // 
-            this.txt_sdt.Enabled = false;
             this.txt_sdt.Location = new System.Drawing.Point(98, 77);
             this.txt_sdt.Name = "txt_sdt";
+            this.txt_sdt.ReadOnly = true;
             this.txt_sdt.Size = new System.Drawing.Size(181, 20);
             this.txt_sdt.TabIndex = 8;
             // 
@@ -308,9 +308,9 @@
             // 
             // txt_sophieu
             // 
-            this.txt_sophieu.Enabled = false;
             this.txt_sophieu.Location = new System.Drawing.Point(98, 22);
             this.txt_sophieu.Name = "txt_sophieu";
+            this.txt_sophieu.ReadOnly = true;
             this.txt_sophieu.Size = new System.Drawing.Size(181, 20);
             this.txt_sophieu.TabIndex = 6;
             // 
@@ -372,6 +372,9 @@
             // 
             this.dg_chitietdatbao.AllowUserToAddRows = false;
             this.dg_chitietdatbao.AllowUserToDeleteRows = false;
+            this.dg_chitietdatbao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dg_chitietdatbao.BackgroundColor = System.Drawing.Color.SeaGreen;
             this.dg_chitietdatbao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_chitietdatbao.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -430,9 +433,9 @@
             // SOTIEN
             // 
             this.SOTIEN.DataPropertyName = "SOTIEN";
-            dataGridViewCellStyle3.Format = "#,0";
-            dataGridViewCellStyle3.NullValue = "N/a";
-            this.SOTIEN.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "#,0";
+            dataGridViewCellStyle1.NullValue = "N/a";
+            this.SOTIEN.DefaultCellStyle = dataGridViewCellStyle1;
             this.SOTIEN.HeaderText = "Số Tiền";
             this.SOTIEN.Name = "SOTIEN";
             this.SOTIEN.ReadOnly = true;
@@ -519,7 +522,6 @@
         private System.Windows.Forms.TextBox txt_diachi;
         private System.Windows.Forms.TextBox txt_sdt;
         private System.Windows.Forms.ComboBox cb_makh;
-        private System.Windows.Forms.TextBox txt_sophieu;
         private System.Windows.Forms.DateTimePicker dtp_ngaydat;
         private System.Windows.Forms.Button btn_in;
         private System.Windows.Forms.Button btn_khongghi;
@@ -531,7 +533,6 @@
         private System.Windows.Forms.Button btn_toi;
         private System.Windows.Forms.Button btn_lui;
         private System.Windows.Forms.Button btn_dau;
-        private System.Windows.Forms.DataGridView dg_chitietdatbao;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button btn_refresh_khachhang;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
@@ -544,5 +545,7 @@
         private System.Windows.Forms.Button btn_chitiet_sua;
         private System.Windows.Forms.Button btn_chitiet_them;
         private System.Windows.Forms.Button btn_chitiet_xoa;
+        private System.Windows.Forms.TextBox txt_sophieu;
+        private System.Windows.Forms.DataGridView dg_chitietdatbao;
     }
 }

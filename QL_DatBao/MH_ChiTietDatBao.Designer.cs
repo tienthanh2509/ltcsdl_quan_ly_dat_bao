@@ -38,7 +38,7 @@
             this.cb_matc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nb_sotien = new System.Windows.Forms.NumericUpDown();
             this.txt_sophieu = new System.Windows.Forms.TextBox();
             this.btn_huy = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
@@ -50,7 +50,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nb_sotien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nb_thangkt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nb_thangbd)).BeginInit();
             this.SuspendLayout();
@@ -104,17 +104,17 @@
             // 
             // txt_nxb
             // 
-            this.txt_nxb.Enabled = false;
             this.txt_nxb.Location = new System.Drawing.Point(369, 49);
             this.txt_nxb.Name = "txt_nxb";
+            this.txt_nxb.ReadOnly = true;
             this.txt_nxb.Size = new System.Drawing.Size(226, 20);
             this.txt_nxb.TabIndex = 4;
             // 
             // txt_tentc
             // 
-            this.txt_tentc.Enabled = false;
             this.txt_tentc.Location = new System.Drawing.Point(61, 53);
             this.txt_tentc.Name = "txt_tentc";
+            this.txt_tentc.ReadOnly = true;
             this.txt_tentc.Size = new System.Drawing.Size(211, 20);
             this.txt_tentc.TabIndex = 3;
             // 
@@ -146,7 +146,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.numericUpDown1);
+            this.groupBox2.Controls.Add(this.nb_sotien);
             this.groupBox2.Controls.Add(this.txt_sophieu);
             this.groupBox2.Controls.Add(this.btn_huy);
             this.groupBox2.Controls.Add(this.btn_ok);
@@ -163,32 +163,36 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết đặt báo";
             // 
-            // numericUpDown1
+            // nb_sotien
             // 
-            this.numericUpDown1.Increment = new decimal(new int[] {
+            this.nb_sotien.Increment = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDown1.Location = new System.Drawing.Point(411, 54);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nb_sotien.Location = new System.Drawing.Point(411, 54);
+            this.nb_sotien.Maximum = new decimal(new int[] {
             1000000000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(184, 20);
-            this.numericUpDown1.TabIndex = 14;
-            this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.numericUpDown1.ThousandsSeparator = true;
+            this.nb_sotien.Name = "nb_sotien";
+            this.nb_sotien.Size = new System.Drawing.Size(184, 20);
+            this.nb_sotien.TabIndex = 14;
+            this.nb_sotien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nb_sotien.ThousandsSeparator = true;
             // 
             // txt_sophieu
             // 
-            this.txt_sophieu.Enabled = false;
+            this.txt_sophieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(215)))), ((int)(((byte)(64)))));
+            this.txt_sophieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_sophieu.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txt_sophieu.Location = new System.Drawing.Point(63, 17);
             this.txt_sophieu.Name = "txt_sophieu";
+            this.txt_sophieu.ReadOnly = true;
             this.txt_sophieu.Size = new System.Drawing.Size(125, 20);
             this.txt_sophieu.TabIndex = 9;
+            this.txt_sophieu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_huy
             // 
@@ -309,7 +313,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nb_sotien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nb_thangkt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nb_thangbd)).EndInit();
             this.ResumeLayout(false);
@@ -337,6 +341,6 @@
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Button btn_huy;
         private System.Windows.Forms.TextBox txt_sophieu;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nb_sotien;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QL_DatBao.Class;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
@@ -8,16 +9,29 @@ namespace QL_DatBao
 {
     public partial class MH_Dat_Bao : Form
     {
-        Class.XL_PHIEUDATBAO Bang_PHIEUDATBAO;
+        XL_PHIEUDATBAO Bang_PHIEUDATBAO;
         BindingManagerBase DS_PHIEUDATBAO;
         //
-        Class.XL_KHACHHANG Bang_KHACHHANG;
+        XL_KHACHHANG Bang_KHACHHANG;
         BindingManagerBase DS_KHACHHANG;
         //
-        Class.XL_CTDATBAO Bang_CTDATBAO;
-        Class.XL_TAPCHI Bang_TAPCHI;
+        XL_CTDATBAO Bang_CTDATBAO;
+        XL_TAPCHI Bang_TAPCHI;
         //
         private bool is_editting = false;
+
+        internal XL_TAPCHI _Bang_TAPCHI
+        {
+            get
+            {
+                return Bang_TAPCHI;
+            }
+
+            set
+            {
+                Bang_TAPCHI = value;
+            }
+        }
 
         public MH_Dat_Bao()
         {
@@ -27,10 +41,10 @@ namespace QL_DatBao
         private void MH_Dat_Bao_Load(object sender, EventArgs e)
         {
             // Khởi tạo
-            Bang_PHIEUDATBAO = new Class.XL_PHIEUDATBAO();
-            Bang_KHACHHANG = new Class.XL_KHACHHANG();
-            Bang_CTDATBAO = new Class.XL_CTDATBAO();
-            Bang_TAPCHI = new Class.XL_TAPCHI();
+            Bang_PHIEUDATBAO = new XL_PHIEUDATBAO();
+            Bang_KHACHHANG = new XL_KHACHHANG();
+            Bang_CTDATBAO = new XL_CTDATBAO();
+            Bang_TAPCHI = new XL_TAPCHI();
             //
             Bang_KHACHHANG.Columns["MAKH"].ReadOnly = true;
             cb_makh.DataSource = Bang_KHACHHANG;
@@ -118,7 +132,7 @@ namespace QL_DatBao
             cb_makh.Enabled = !cb_makh.Enabled;
             //dtp_ngaydat.Enabled = false;
             dtp_ngaydat.Value = DateTime.Now;
-            txt_sophieu.Enabled = true;
+            txt_sophieu.ReadOnly = false;
             txt_sophieu.Text = "";
             cb_makh.SelectedIndex = -1;
             txt_tenkh.Text = "";
@@ -127,6 +141,7 @@ namespace QL_DatBao
             txt_tongsotien.Text = "N/a";
             //
             btn_dau.Enabled = btn_cuoi.Enabled = btn_lui.Enabled = btn_toi.Enabled = false;
+            btn_chitiet_them.Enabled = btn_chitiet_sua.Enabled = btn_chitiet_xoa.Enabled = false;
         }
 
         private void btn_xoa_Click(object sender, EventArgs e)
@@ -157,10 +172,11 @@ namespace QL_DatBao
             cb_makh.Enabled = !cb_makh.Enabled;
             dtp_ngaydat.Enabled = true;
             //
-            txt_sophieu.Enabled = false;
+            txt_sophieu.ReadOnly = true;
             is_editting = true;
             //
             btn_dau.Enabled = btn_cuoi.Enabled = btn_lui.Enabled = btn_toi.Enabled = false;
+            btn_chitiet_them.Enabled = btn_chitiet_sua.Enabled = btn_chitiet_xoa.Enabled = false;
         }
 
         private void btn_ghi_Click(object sender, EventArgs e)
@@ -169,17 +185,13 @@ namespace QL_DatBao
             {
                 if (is_editting)
                 {
-                    //Bang_PHIEUDATBAO.Rows[DS_PHIEUDATBAO.Position]["MAKH"] = cb_makh.SelectedValue;
-                    //Bang_PHIEUDATBAO.Rows[DS_PHIEUDATBAO.Position]["NGAYDAT"] = dtp_ngaydat.Value;
-                    //Bang_PHIEUDATBAO.Rows[DS_PHIEUDATBAO.Position].AcceptChanges();
-                    //Bang_PHIEUDATBAO.Write();
                     DataRow r = Bang_PHIEUDATBAO.NewRow();
                     r["MAKH"] = cb_makh.SelectedValue;
                     r["SOPHIEU"] = txt_sophieu.Text.Trim();
                     r["NGAYDAT"] = dtp_ngaydat.Value;
                     //
-                    System.Data.SqlClient.SqlConnection con = Bang_PHIEUDATBAO.con;
-                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("UPDATE PHIEUDATBAO SET MAKH = @MAKH, NGAYDAT = @NGAYDAT WHERE SOPHIEU = @SOPHIEU", con);
+                    SqlConnection con = Bang_PHIEUDATBAO.con;
+                    SqlCommand cmd = new SqlCommand("UPDATE PHIEUDATBAO SET MAKH = @MAKH, NGAYDAT = @NGAYDAT WHERE SOPHIEU = @SOPHIEU", con);
                     cmd.Parameters.AddWithValue("@SOPHIEU", r["SOPHIEU"]);
                     cmd.Parameters.AddWithValue("@NGAYDAT", r["NGAYDAT"]);
                     cmd.Parameters.AddWithValue("@MAKH", r["MAKH"]);
@@ -195,8 +207,8 @@ namespace QL_DatBao
                     r["SOPHIEU"] = txt_sophieu.Text.Trim();
                     r["NGAYDAT"] = dtp_ngaydat.Value;
                     //
-                    System.Data.SqlClient.SqlConnection con = Bang_PHIEUDATBAO.con;
-                    System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand("INSERT INTO PHIEUDATBAO (SOPHIEU, MAKH, NGAYDAT) VALUES(@SOPHIEU, @MAKH, @NGAYDAT)", con);
+                    SqlConnection con = Bang_PHIEUDATBAO.con;
+                    SqlCommand cmd = new SqlCommand("INSERT INTO PHIEUDATBAO (SOPHIEU, MAKH, NGAYDAT) VALUES(@SOPHIEU, @MAKH, @NGAYDAT)", con);
                     cmd.Parameters.AddWithValue("@SOPHIEU", r["SOPHIEU"]);
                     cmd.Parameters.AddWithValue("@NGAYDAT", r["NGAYDAT"]);
                     cmd.Parameters.AddWithValue("@MAKH", r["MAKH"]);
@@ -204,10 +216,6 @@ namespace QL_DatBao
                     //
                     Bang_PHIEUDATBAO.Read();
                     btn_cuoi.PerformClick();
-                    //
-                    //Bang_PHIEUDATBAO.Rows.Add(r);
-                    //Bang_PHIEUDATBAO.AcceptChanges();
-                    //Bang_PHIEUDATBAO.Write();
                 }
 
                 btn_them.Enabled = !btn_them.Enabled;
@@ -219,7 +227,7 @@ namespace QL_DatBao
                 //
                 cb_makh.Enabled = !cb_makh.Enabled;
                 dtp_ngaydat.Enabled = false;
-                txt_sophieu.Enabled = false;
+                txt_sophieu.ReadOnly = false;
                 //
                 btn_dau.Enabled = btn_cuoi.Enabled = btn_lui.Enabled = btn_toi.Enabled = true;
                 //
@@ -245,14 +253,25 @@ namespace QL_DatBao
             //
             cb_makh.Enabled = !cb_makh.Enabled;
             dtp_ngaydat.Enabled = false;
-            txt_sophieu.Enabled = false;
+            txt_sophieu.ReadOnly = true;
             //
             Bang_PHIEUDATBAO.RejectChanges();
             Bang_KHACHHANG.RejectChanges();
             Bang_TAPCHI.RejectChanges();
             Bang_CTDATBAO.RejectChanges();
             //
+            DS_KHACHHANG.CancelCurrentEdit();
+            DS_PHIEUDATBAO.CancelCurrentEdit();
+            cb_makh.SelectedValue = Bang_KHACHHANG.Rows[DS_KHACHHANG.Position]["MAKH"];
+            //
             btn_dau.Enabled = btn_cuoi.Enabled = btn_lui.Enabled = btn_toi.Enabled = true;
+
+            if (dg_chitietdatbao.Rows.Count > 0)
+            {
+                btn_chitiet_them.Enabled = true;
+                btn_chitiet_sua.Enabled = true;
+                btn_chitiet_xoa.Enabled = true;
+            }
         }
 
         private void btn_in_Click(object sender, EventArgs e)
@@ -321,16 +340,18 @@ namespace QL_DatBao
 
         private void btn_chitiet_them_Click(object sender, EventArgs e)
         {
-            MH_ChiTietDatBao f = new MH_ChiTietDatBao();
-            f.f = this;
+            MH_ChiTietDatBao f = new MH_ChiTietDatBao(0, txt_sophieu.Text, dg_chitietdatbao.CurrentRow);
             f.ShowDialog();
+
+            update_control_ctdatbao();
         }
 
         private void btn_chitiet_sua_Click(object sender, EventArgs e)
         {
-            MH_ChiTietDatBao f = new MH_ChiTietDatBao(1);
-            f.f = this;
-            f.ShowDialog();
+            MH_ChiTietDatBao f = new MH_ChiTietDatBao(1, txt_sophieu.Text, dg_chitietdatbao.CurrentRow);
+            f.ShowDialog(this);
+
+            update_control_ctdatbao();
         }
 
         private void btn_chitiet_xoa_Click(object sender, EventArgs e)
